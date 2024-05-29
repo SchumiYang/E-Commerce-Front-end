@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding-top: 0px;
+        margin: 0px;
+    }
+
+    body{
+        margin-top: 50px;
+    }
+
+    .header{
+        margin: 50px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .middle{
+        display: flex;
+        flex-direction: row;
+        height: 500px;
+    }
+
+    .add-img-container{
+        margin-left: 500px;
+        margin-right: 250px;
+    }
+
+    .add-img{
+        width: 300px;
+        height: 400px;
+        background-color: #848484;
+        border-radius: 30px;
+    }
+
+    .add-img:hover{
+        background-color: #646464;
+    }
+
+    .details{
+        display:flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+
+    input {
+        padding-top: 5px;
+        outline: 0;
+        border-width: 0 0 2px;
+        border-color: blue;
+        font-size: 20px;
+        height: 20px;
+    }
+
+    input:focus {
+        border-color: green;
+        outline: 1px dotted #000;
+    }
+
+    .button-section{
+        display: flex;
+        flex-direction: row;
+        margin-left: 50%;
+        gap: 100px;
+    }
+
+    .button{
+        width: 100px;
+        height: 50px; 
+        color: white; 
+        border: none; 
+        outline: none; 
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .cancel{
+        background-color: #989898;
+    }
+
+    .submit{
+        background-color: #6495ED;
+    }
+</style>
+<body>
+    <div class="content">
+        <div class="header">
+            <h1>添加商品</h1>
+        </div>
+        <div class="middle">
+            <div class="add-img-container">
+                <div class="add-img">
+
+                </div>
+            </div>
+            <div class="details">
+                <div class="row"><h2>Core number:</h2><input type="number" id="core" name="core" value=""></div>
+                <div class="row"><h2>Total RAM(GB):</h2><input type="number" id="ram" name="ram" value=""></div>
+                <div class="row"><h2>容量(GB):</h2><input type="number" id="capacity" name="capacity" value=""></div>
+                <div class="row"><h2>Bandwidth:</h2><input type="number" id="capacity" name="capacity" value=""></div>
+                <div class="row"><h2>價格(每月):</h2><input type="number" id="price" name="price" value=""></div>
+            </div>
+        </div>
+        <div class="button-section">
+            <div class="cancel-button">
+                <a href="/index.html"><button class="button cancel">取消</button></a>
+            </div>
+            <div class="submit-button">
+                <a href="/submit.html"><button class="button submit">確認</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
