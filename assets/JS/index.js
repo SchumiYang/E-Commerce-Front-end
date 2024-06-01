@@ -26,11 +26,21 @@ document.addEventListener('DOMContentLoaded', function() {
         reloadSlider();
     }
 
+    let refreshSlider = setInterval(() => {next.click()}, 5000);
+
     function reloadSlider() {
         let checkLeft = items[active].offsetLeft;
         list.style.left = -checkLeft + 'px';
+
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === active);
         });
     }
+
+    dots.forEach((li, key) => {
+        li.addEventListener('click',function(){
+            active = key;
+            reloadSlider();
+        })
+    })
 });
