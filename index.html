@@ -3,101 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/CSS/html.css">
     <title>main page</title>
-    
 </head>
-<style>
-    *{
-        padding: 0px;
-        margin: 0px;
-    }
-    
-    body{
-        margin-top: 80px;
-        background-color: black;
-        color: white;
-    }
-
-    #nav-placeholder{
-        z-index: 5;
-        position: fixed;
-        top: 0px;
-        width: 100%;
-    }
-    
-    .slider{
-        width: 1920px;
-        max-width: 100vw;
-        height: 800px;
-        margin:auto;
-        position: relative;
-    }
-    .list{
-        position:absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        display: flex;
-        width: max-content;
-        transition: 1s;
-    }
-
-    .item img{
-        width: 1920px;
-        max-width: 100vm;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .button{
-        position:absolute;
-        top: 45%;
-        left: 0%;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .button button{
-        width: 50px;
-        height: 150px;
-        background-color: #fff5;
-        border: none;
-        font-family: monospace;
-        font-weight: bold;
-    }
-
-    .dots{
-        position: absolute;
-        bottom: 40px;
-        color: #fff;
-        left: 0;
-        width: 100%;
-        margin:0;
-        padding:0;
-        display:flex;
-        justify-content: center;
-        gap: 10%;
-    }
-
-    .dots li{
-        list-style: none;
-        width: 20px;
-        height: 20px;
-        background-color: white;
-        margin: 20px;
-        border: solid 0px white;
-        border-radius: 20px;
-    }
-    
-    .dots li.active{
-        border: solid 3px white;
-        background-color: rgb(46, 46, 46);
-    }
-
-</style>
-
 <body>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <!--Navigation bar-->
@@ -116,7 +24,7 @@
     <div class="content">
         <div class="slider">
             <div class="list">
-                <div class="item">
+                <div class="item" >
                     <img src="assets/img/cpu.jpg"/>
                 </div>
                 <div class="item">
@@ -128,7 +36,7 @@
             </div>
 
             <!-- button prev and next -->
-            <div class="button">
+            <div class="ad-button">
                 <button id="prev"><</button>
                 <button id="next">></button>
             </div>
@@ -139,7 +47,94 @@
                 <li></li>
             </ul>
         </div>
-        <div>
+        <div class="scroller">
+            <div class="product-list">
+                <div class="product-container">
+                    <div class="product-title">
+                        Item 1
+                    </div>
+                    <div class="product-desc">
+
+                    </div>
+                    <div class="product-button">
+                        <button>
+                            Buy
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-container">
+                    <div class="product-title">
+                        Item 2
+                    </div>
+                    <div class="product-desc">
+
+                    </div>
+                    <div class="product-button">
+                        <button>
+                            Buy
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-container">
+                    <div class="product-title">
+                        Item 3
+                    </div>
+                    <div class="product-desc">
+
+                    </div>
+                    <div class="product-button">
+                        <button>
+                            Buy
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-container">
+                    <div class="product-title">
+                        Item 4
+                    </div>
+                    <div class="product-desc">
+
+                    </div>
+                    <div class="product-button">
+                        <button>
+                            Buy
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-container">
+                    <div class="product-title">
+                        Item 5
+                    </div>
+                    <div class="product-desc">
+
+                    </div>
+                    <div class="product-button">
+                        <button>
+                            Buy
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-container">
+                    <div class="product-title">
+                        Item 6
+                    </div>
+                    <div class="product-desc">
+
+                    </div>
+                    <div class="product-button">
+                        <button>
+                            Buy
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita minus commodi quos esse odit perferendis provident excepturi. Aut mollitia aperiam quibusdam reiciendis, laudantium molestiae. Iure cumque magnam optio totam animi.
             Voluptatibus ipsam minus animi, quos facere consectetur perspiciatis corrupti sequi aperiam, accusamus nihil veritatis molestiae fugiat delectus. Perferendis necessitatibus ipsum maxime aut, sequi distinctio rem minus iure pariatur doloremque eius?
             Sunt quis, iste, omnis voluptatibus debitis illo, saepe quo ipsum vitae dignissimos neque recusandae vero sed beatae fugit. Eius explicabo, aut ducimus laudantium quidem perspiciatis nobis quibusdam earum numquam itaque.

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let active = 0;
     let lengthItems = items.length - 1;
 
+
     next.onclick = function() {
         if (active + 1 > lengthItems) {
             active = 0;
@@ -26,7 +27,26 @@ document.addEventListener('DOMContentLoaded', function() {
         reloadSlider();
     }
 
-    let refreshSlider = setInterval(() => {next.click()}, 5000);
+    let refreshSlider;
+
+    function startSliderInterval() {
+        refreshSlider = setInterval(() => {
+            next.click();
+        }, 5000);
+    }
+
+    function resetSliderInterval() {
+        clearInterval(refreshSlider);
+        startSliderInterval();
+    }
+
+    // Start the slider interval when the page loads
+    startSliderInterval();
+
+    // Add event listener to reset the interval on user click
+    document.addEventListener('click', (event) => {
+        resetSliderInterval();
+    });
 
     function reloadSlider() {
         let checkLeft = items[active].offsetLeft;
@@ -43,4 +63,30 @@ document.addEventListener('DOMContentLoaded', function() {
             reloadSlider();
         })
     })
+
+    let scrollers = document.querySelectorAll('.scroller');
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce").matches){
+        addAnimation();
+    }
+
+    function addAnimation(){
+        scrollers.forEach(scroller => {
+            scroller.setAttribute("data-animated", true);
+
+            const productList = scroller.querySelector('.product-list');
+            const productItem = Array.from(productList.children);
+
+            productItem.forEach(item => {
+                const duplicatedItem = item.cloneNode(true);
+                // console.log(duplicatedItem);
+                duplicatedItem.setAttribute('aria-hidden', true);
+                productList.appendChild(duplicatedItem);
+            })
+
+            console.log(productItem);
+        });
+    }
+
+
 });
