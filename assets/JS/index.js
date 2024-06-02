@@ -84,9 +84,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 productList.appendChild(duplicatedItem);
             })
 
-            console.log(productItem);
+            // console.log(productItem);
         });
     }
 
+    
 
 });
