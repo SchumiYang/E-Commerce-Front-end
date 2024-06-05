@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>item</title>
+    <link rel="stylesheet" href="../assets/CSS/item.css">
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+
+    </div>
+
+    <script>
+    $(function(){
+    $("#nav-placeholder").load("../nav.html");
+    });
+    </script>
+
+<main>
+    <section class="product">
+        <div class="product-image">
+            <img src="../assets/img/phone.svg" alt="App Base VPS"></img>
+        </div>
+        <div class="product-details">
+            <h1>App Base VPS</h1>
+            <p>Build Your APP with Own VPS service</p>
+            <p class="specs">with vCPU 1GB, RAM 4GB | In stock: 100</p>
+            <p class="price">$5,000 / Per month</p>
+            <div class="quantity">
+                <button class="minus">-</button>
+                <input type="number" value="1" min="1">
+                <button class="plus">+</button>
+            </div>
+            <button class="buy-now">Buy Now</button>
+        </div>
+    </section>
+
+    <section class="configuration">
+        <div class="config-item">
+            <label for="vcpu">vCPU</label>
+            <button class="minus">-</button>
+            <input type="number" id="vcpu" value="2" min="1">
+            <button class="plus">+</button>
+        </div>
+        <div class="config-item">
+            <label for="ram">vGPU</label>
+            <button class="minus">-</button>
+            <input type="number" id="ram" value="4" min="1">
+            <button class="plus">+</button>
+        </div>
+        <div class="config-item">
+            <label for="ram">RAM</label>
+            <button class="minus">-</button>
+            <input type="number" id="ram" value="4" min="1">
+            <button class="plus">+</button>
+        </div>
+        <div class="config-item">
+            <label for="mem">Mem.</label>
+            <button class="minus">-</button>
+            <input type="number" id="mem" value="64" min="1">
+            <button class="plus">+</button>
+        </div>
+        <div class="config-item">
+            <label for="bandwidth">Bandwidth</label>
+            <button class="minus">-</button>
+            <input type="number" id="bandwidth" value="100" min="1">
+            <button class="plus">+</button>
+        </div>
+    </section>
+
+    <div class="below">
+        <section class="reviews">
+            <h2>Reviews (24)</h2>
+            <div class="review">
+                <p><strong>Perfect!</strong></p>
+                <p>I've been wearing my AFT for months now and I always get compliments, not to mention they are comfortable and easy to clean. I wear a 9 in nike sneakers and these fit me great!</p>
+                <p><em>- Nancy6152837, Apr 26, 2024</em></p>
+            </div>
+            <div class="review">
+                <p><strong>Perfect!</strong></p>
+                <p>I've been wearing my AFT for months now and I always get compliments, not to mention they are comfortable and easy to clean. I wear a 9 in nike sneakers and these fit me great!</p>
+                <p><em>- Nancy6152837, Apr 26, 2024</em></p>
+            </div>
+            <a href="#" class="more-reviews">More Reviews</a>
+        </section>
+        <section class="brand">
+            <h2>為什麼選擇 Amazon EC2?</h2>
+            <p>Amazon Elastic Compute Cloud (Amazon EC2) 提供具 ...</p>
+            <p><strong>Amazon EC2 的優勢</strong></p>
+            <button>最佳化效能</button>
+            <button>保固</button>
+            <button>服務期限</button>
+        </section>
+    </div>
+
+    <section class="app-base">
+        <div class="app-base-item">
+            <h3>APP Base</h3>
+            <p>Build Your APP with Own VPS service</p>
+            <button>More</button>
+        </div>
+        <div class="app-base-item">
+            <h3>APP Base</h3>
+            <p>Build Your APP with Own VPS service</p>
+            <button>More</button>
+        </div>
+        <div class="app-base-item">
+            <h3>APP Base</h3>
+            <p>Build Your APP with Own VPS service</p>
+            <button>More</button>
+        </div>
+    </section>
+</main>
+</body>
+</html>
