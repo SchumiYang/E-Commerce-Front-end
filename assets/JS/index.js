@@ -1,33 +1,22 @@
-document.addEventListener('DOMContentLoaded', function() {
-    let list = document.querySelector('.list');
-    let items = document.querySelectorAll('.slider .list .item');
-    let dots = document.querySelectorAll('.slider .dots li');
-    let prev = document.getElementById('prev');
-    let next = document.getElementById('next');
+$(document).ready(function() {
+    const list = document.querySelector('.list');
+    const items = document.querySelectorAll('.slider .list .item');
+    const dots = document.querySelectorAll('.slider .dots li');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
 
     let active = 0;
-    let lengthItems = items.length - 1;
-
-
-    next.onclick = function() {
-        if (active + 1 > lengthItems) {
-            active = 0;
-        } else {
-            active += 1;
-        }
-        reloadSlider();
-    }
-
-    prev.onclick = function() {
-        if (active - 1 < 0) {
-            active = lengthItems;
-        } else {
-            active -= 1;
-        }
-        reloadSlider();
-    }
-
+    const lengthItems = items.length - 1;
     let refreshSlider;
+
+    function reloadSlider() {
+        const checkLeft = items[active].offsetLeft;
+        list.style.left = -checkLeft + 'px';
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === active);
+        });
+    }
 
     function startSliderInterval() {
         refreshSlider = setInterval(() => {
@@ -40,54 +29,47 @@ document.addEventListener('DOMContentLoaded', function() {
         startSliderInterval();
     }
 
-    // Start the slider interval when the page loads
-    startSliderInterval();
-
-    // Add event listener to reset the interval on user click
-    document.addEventListener('click', (event) => {
-        resetSliderInterval();
+    next.addEventListener('click', () => {
+        active = (active + 1 > lengthItems) ? 0 : active + 1;
+        reloadSlider();
     });
 
-    function reloadSlider() {
-        let checkLeft = items[active].offsetLeft;
-        list.style.left = -checkLeft + 'px';
+    prev.addEventListener('click', () => {
+        active = (active - 1 < 0) ? lengthItems : active - 1;
+        reloadSlider();
+    });
 
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === active);
-        });
-    }
+    document.addEventListener('click', resetSliderInterval);
 
-    dots.forEach((li, key) => {
-        li.addEventListener('click',function(){
-            active = key;
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            active = index;
             reloadSlider();
-        })
-    })
+        });
+    });
 
-    let scrollers = document.querySelectorAll('.scroller');
+    const scrollers = document.querySelectorAll('.scroller');
 
-    if (!window.matchMedia("(prefers-reduced-motion: reduce").matches){
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
         addAnimation();
     }
 
-    function addAnimation(){
+    function addAnimation() {
         scrollers.forEach(scroller => {
             scroller.setAttribute("data-animated", true);
 
             const productList = scroller.querySelector('.product-list');
-            const productItem = Array.from(productList.children);
+            const productItems = Array.from(productList.children);
 
-            productItem.forEach(item => {
+            productItems.forEach(item => {
                 const duplicatedItem = item.cloneNode(true);
-                // console.log(duplicatedItem);
                 duplicatedItem.setAttribute('aria-hidden', true);
                 productList.appendChild(duplicatedItem);
-            })
-
-            // console.log(productItem);
+            });
         });
     }
 
-    
+    // Uncomment the line below to start the slider interval when the page loads
+    // startSliderInterval();
 
 });
