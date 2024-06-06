@@ -1,0 +1,33 @@
+* {
+    font-family: Arial, Helvetica;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reviews {
+    width: 350px;
+}
+
+.reviews, .brand {
+    margin: 5%;
+}
+
+.reviews, .brand, .app-base {
+    margin-bottom: 40px;
+}
+
+.reviews h2, .brand h2 {
+    font-size: 24px;
+}
+
+.review {
+    background-color: #eaeaea;
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.review p {
+    margin: 5px 0;
+}

@@ -7,7 +7,7 @@ body {
 }
 
 main {
-    width: 800px;
+    width: 1080px;
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -55,10 +55,10 @@ main {
 }
 
 .product-details h1, .product-details p {
-    margin: 15px 0px;
+    margin: 5px 0px;
 }
 
-.product-details .specs, .product-details .instock{
+.product-details .instock{
     color: rgb(144, 144, 144);
     font-size: 15px;
     margin: 10px 0;
@@ -227,7 +227,13 @@ input::-webkit-inner-spin-button {
     margin: 10px;
 }
 
-.reviews, .brand, .app-base {
+.reviews iframe {
+    width: 400px;
+    height: 350px;
+    border: none;
+}
+
+.reviews, .brand, .other-items {
     margin-bottom: 40px;
 }
 
@@ -237,6 +243,7 @@ input::-webkit-inner-spin-button {
 
 .review {
     background-color: #eaeaea;
+    width: 300px;
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -245,14 +252,10 @@ input::-webkit-inner-spin-button {
     margin: 5px 0;
 }
 
-.more-reviews {
-    color: #00ffcc;
-    text-decoration: none;
-}
-
 .brand {
     width: 40%;
 }
+
 .brand p {
     background-color: #EAEAEA;
     color: #616161;
@@ -275,12 +278,12 @@ input::-webkit-inner-spin-button {
     justify-content: space-around;
 }
 
-.app-base {
+.other-items {
     display: flex;
     justify-content: space-around;
 }
 
-.app-base-item {
+.other-item {
     background-color: #eaeaea;
     padding: 20px;
     text-align: center;
@@ -288,7 +291,7 @@ input::-webkit-inner-spin-button {
     margin: 0 10px;
 }
 
-.app-base-item button {
+.other-item a {
     background-color: #00ffcc;
     border: none;
     color: #000;
@@ -298,7 +301,7 @@ input::-webkit-inner-spin-button {
 
 .below {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 @media screen and (max-width: 800px) {
@@ -341,11 +344,11 @@ input::-webkit-inner-spin-button {
         width: 100%;
     }
 
-    .app-base {
+    .other-items {
         flex-direction: column;
     }
 
-    .app-base-item {
+    .other-item {
         margin: 10px 0;
         width: 100%;
     }
@@ -369,7 +372,7 @@ input::-webkit-inner-spin-button {
         font-size: 24px;
     }
 
-    .product-details .specs, .product-details .price {
+    .product-details .price {
         font-size: 16px;
     }
 
