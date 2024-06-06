@@ -1,0 +1,148 @@
+* {
+    padding-top: 0px;
+    margin: 0px;
+}
+
+.header {
+    margin: 50px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.tab-container {
+    display: flex;
+    max-width: 80vw;
+    margin: 0 auto;
+    transition: all 1s;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tab-sidebar {
+    background-color: #f1f1f1;
+    padding: 20px;
+    width: 200px;
+}
+
+.tab-btn {
+    display: block;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: 0.3s;
+    font-size: 16px;
+    width: 100%;
+    text-align: left;
+}
+
+.tab-btn.active {
+    background-color: #ccc;
+}
+
+.tab-subcategory {
+    padding-left: 20px;
+}
+
+.tab-subbtn {
+    display: block;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 20px;
+    transition: 0.3s;
+    font-size: 14px;
+    width: 100%;
+    text-align: left;
+}
+
+.tab-subbtn.active {
+    background-color: #ddd;
+}
+
+.tab-content {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+i {
+    margin-right: 4px;
+}
+
+.add-img {
+    width: 300px;
+    height: 400px;
+    background-color: #848484;
+    border-radius: 30px;
+}
+
+.add-img:hover {
+    background-color: #646464;
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+    gap: 32px;
+}
+
+.label {
+    display: block;
+    font-weight: bold;
+    margin-block: 12px;
+}
+
+input,
+textarea {
+    width: fit-content;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+    border-color: green;
+    outline: 1px dotted #000;
+}
+
+.button-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.button {
+    width: 100px;
+    height: 50px;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.cancel {
+    background-color: #989898;
+}
+
+.submit {
+    background-color: #6495ED;
+}

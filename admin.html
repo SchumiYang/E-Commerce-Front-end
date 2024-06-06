@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration</title>
+    <link rel="stylesheet" href="assets//CSS/admin.css">
+    <script src="assets/JS/admin.js" defer></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://kit.fontawesome.com/9b3624985e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#nav-placeholder").load("nav.html");
+        });
+    </script>
+
+    <div class="tab-container">
+        <div class="tab-sidebar">
+            <div class="tab-category">
+                <button class="tab-btn active"><i class="fa-solid fa-server"></i>Merch</button>
+                <div class="tab-subcategory">
+                    <button class="tab-subbtn active"><i class="fa-solid fa-plus"></i>Add</button>
+                    <button class="tab-subbtn"><i class="fa-solid fa-book"></i>Manage</button>
+                </div>
+            </div>
+            <div class="tab-category">
+                <button class="tab-btn"><i class="fa-solid fa-folder"></i>Order</button>
+                <div class="tab-subcategory">
+                    <button class="tab-subbtn"><i class="fa-solid fa-book"></i>Manage</button>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content">
+            <div class="tab-panel active">
+                <form action="add.jsp" method="post">
+                    <div class="header">
+                        <h1>Add Merch</h1>
+                    </div>
+                    <div class="add-img-container">
+                        <img src="">
+                    </div>
+                    <div class="details">
+                        <div class="product">
+                            <div class="label">Product Name:</div>
+                            <input type="text" name="name" value="">
+
+                            <div class="label">Product Description:</div>
+                            <input type="text" name="desc" value="">
+
+                            <div class="label">Product Image Path:</div>
+                            <input type="text" name="desc" value="">
+
+                            <div class="label">Stocks:</div>
+                            <input type="number" name="stocks" value="">
+
+                            <div class="label">Price:</div>
+                            <input type="number" name="price" value="">
+                        </div>
+                        <div class="feature">
+                            <div class="label">Core Number:</div>
+                            <input type="number" name="core" value="">
+                            <div class="label">RAM(GB):</div>
+                            <input type="number" name="ram" value="">
+                            <div class="label">Memory(GB):</div>
+                            <input type="number" name="memory" value="">
+                            <div class="label">Bandwidth:</div>
+                            <input type="number" name="Bandwidth" value="">
+                        </div>
+                    </div>
+                    <div class="button-section">
+                        <input type="reset" class="cancel-button button cancel" value="Reset">
+                        <input type="submit" class="submit-button button submit" value="Submit">
+                    </div>
+                </form>
+                <!-- Add your content here -->
+            </div>
+            <div class="tab-panel">
+                <h2>Manage Merch</h2>
+                <!-- Add your content here -->
+            </div>
+            <div class="tab-panel">
+                <h2>Manage Order</h2>
+                <!-- Add your content here -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
