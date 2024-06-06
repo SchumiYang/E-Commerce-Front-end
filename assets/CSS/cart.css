@@ -13,7 +13,6 @@ h1 {
 }
 
 body {
-    margin-top: 80px;
     background-color: #edede9;
 }
 
@@ -220,14 +219,19 @@ body {
     }
 
     .total-item {
-        font-size: 18px;
+        font-size: 3vw;
     }
-    .line{
+
+    .line {
         width: 80%;
     }
+
+    .btn {
+        font-size: 3vw;
+    }
+
     .hrcontainer,
     .total,
-    .total-item,
     .checkout {
         width: 100%;
         justify-content: center;
