@@ -1,16 +1,22 @@
 body{
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin-top: 100px;
     padding: 0;
     background-color: #1a1a1a;
     color: #ffffff;
+}
+
+#nav-placeholder {
+    z-index: 5;
+    position: fixed;
+    top: 0px;
+    width: 100%;
 }
 
 main{
     width: 1080px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
     border-radius: 30px;
     color: #000;
     display: grid;
