@@ -3,24 +3,15 @@
     margin: 0px;
 }
 
-
-.header {
-    margin: 50px;
-}
-
-h1 {
-    text-align: center;
-}
-
 body {
     background-color: #edede9;
     font-family: "Noto Sans", sans-serif;
 }
 
 .cart-container {
-    font-size: 24px;
+    font-size: 18px;
     margin: auto;
-    width: min(80rem, 100vw);
+    width: min(65rem, 100vw);
     padding: 20px;
 }
 
@@ -64,14 +55,14 @@ body {
     }
 
     .spec {
-        font-size: 18px;
+        font-size: 14px;
         opacity: 50%;
     }
 }
 
 .delete {
     cursor: pointer;
-    font-size: 32px;
+    font-size: 24px;
     transition: scale 0.5s;
 }
 
@@ -125,7 +116,7 @@ body {
 }
 
 .total-item {
-    font-size: 24px;
+    font-size: 20px;
     width: 30%;
     display: flex;
     justify-content: space-around;
