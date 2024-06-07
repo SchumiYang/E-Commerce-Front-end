@@ -19,7 +19,7 @@ body {
 .cart-container {
     font-size: 24px;
     margin: auto;
-    width: min(100rem, 100vw);
+    width: min(80rem, 100vw);
     padding: 20px;
 }
 
@@ -118,7 +118,7 @@ body {
 }
 
 .total {
-    width: 85%;
+    width: 75%;
     display: flex;
     justify-content: right;
 }
@@ -132,7 +132,7 @@ body {
 
 .hrcontainer {
     display: flex;
-    width: 83%;
+    width: 73%;
     justify-content: right;
 }
 
@@ -144,7 +144,7 @@ body {
 
 .checkout {
     display: flex;
-    width: 83%;
+    width: 73%;
     justify-content: right;
 }
 
