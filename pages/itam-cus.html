@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>item</title>
-    <link rel="stylesheet" href="../assets/CSS/item.css">
+    <title>item-cus</title>
+    <link rel="stylesheet" href="../assets/CSS/item-cus.css">
 </head>
 <body>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -19,100 +19,115 @@
     });
     </script>
 
-<main>
-    <section class="product">
-        <div class="product-image">
-            <img src="../assets/img/phone.svg" alt="App Base VPS"></img>
-        </div>
-        <div class="product-details">
-            <h1>App Base VPS</h1>
-            <p>Build Your APP with Own VPS service</p>
-            <p class="specs">with vCPU 1GB, RAM 4GB | In stock: 100</p>
-            <p class="price">$5,000 / Per month</p>
-            <div class="quantity">
-                <button class="minus">-</button>
-                <input type="number" value="1" min="1">
-                <button class="plus">+</button>
+    <main>
+        <section class="product">
+            <div class="product-image">
+                <img src="../assets/img/equa.png" alt="App Base VPS"></img>
             </div>
-            <button class="buy-now">Buy Now</button>
-        </div>
-    </section>
-
-    <section class="configuration">
-        <div class="config-item">
-            <label for="vcpu">vCPU</label>
-            <button class="minus">-</button>
-            <input type="number" id="vcpu" value="2" min="1">
-            <button class="plus">+</button>
-        </div>
-        <div class="config-item">
-            <label for="ram">vGPU</label>
-            <button class="minus">-</button>
-            <input type="number" id="ram" value="4" min="1">
-            <button class="plus">+</button>
-        </div>
-        <div class="config-item">
-            <label for="ram">RAM</label>
-            <button class="minus">-</button>
-            <input type="number" id="ram" value="4" min="1">
-            <button class="plus">+</button>
-        </div>
-        <div class="config-item">
-            <label for="mem">Mem.</label>
-            <button class="minus">-</button>
-            <input type="number" id="mem" value="64" min="1">
-            <button class="plus">+</button>
-        </div>
-        <div class="config-item">
-            <label for="bandwidth">Bandwidth</label>
-            <button class="minus">-</button>
-            <input type="number" id="bandwidth" value="100" min="1">
-            <button class="plus">+</button>
-        </div>
-    </section>
-
-    <div class="below">
-        <section class="reviews">
-            <h2>Reviews (24)</h2>
-            <div class="review">
-                <p><strong>Perfect!</strong></p>
-                <p>I've been wearing my AFT for months now and I always get compliments, not to mention they are comfortable and easy to clean. I wear a 9 in nike sneakers and these fit me great!</p>
-                <p><em>- Nancy6152837, Apr 26, 2024</em></p>
+            <div class="product-details">
+                <h1>Custom-Made VPS</h1>
+                <p>Make the one you really needed</p>
+                <div class="flex">
+                    <p class="instock">| In stock: 100</p>
+                </div>
+                <div class="flex">
+                    <p class="price">Select your specifications to get the price</p>
+                </div>
             </div>
-            <div class="review">
-                <p><strong>Perfect!</strong></p>
-                <p>I've been wearing my AFT for months now and I always get compliments, not to mention they are comfortable and easy to clean. I wear a 9 in nike sneakers and these fit me great!</p>
-                <p><em>- Nancy6152837, Apr 26, 2024</em></p>
-            </div>
-            <a href="#" class="more-reviews">More Reviews</a>
         </section>
-        <section class="brand">
-            <h2>為什麼選擇 Amazon EC2?</h2>
-            <p>Amazon Elastic Compute Cloud (Amazon EC2) 提供具 ...</p>
-            <p><strong>Amazon EC2 的優勢</strong></p>
-            <button>最佳化效能</button>
-            <button>保固</button>
-            <button>服務期限</button>
-        </section>
-    </div>
 
-    <section class="app-base">
-        <div class="app-base-item">
-            <h3>APP Base</h3>
-            <p>Build Your APP with Own VPS service</p>
-            <button>More</button>
+        <script src="../assets/JS/item-cus.js"></script>
+        <form method="post" name="">
+            <section class="configuration">
+                <div class="config-img">
+                    <div class="pro-img-bor cpu"></div>
+                    <div class="pro-img-bor gpu"></div>
+                    <div class="pro-img-bor ram"></div>
+                    <div class="pro-img-bor mem"></div>
+                    <img class="t" src="../assets/img/board.webp"></img>
+                </div>
+                <div class="conf-number">
+                    <div class="config-item" data-target="cpu">
+                        <label for="vcpu">vCPU</label>
+                        <input type="button" class="minus" value="-">
+                        <input type="number" value="1" min="1" readonly>
+                        <input type="button" class="plus" value="+">
+                        <label class="gb">GB</label>
+                    </div>
+                    <div class="config-item" data-target="gpu">
+                        <label for="ram">vGPU</label>
+                        <input type="button" class="minus" value="-">
+                        <input type="number" value="1" min="1" readonly>
+                        <input type="button" class="plus" value="+">
+                        <label class="gb">GB</label>
+                    </div>
+                    <div class="config-item" data-target="ram">
+                        <label for="ram">RAM</label>
+                        <input type="button" class="minus" value="-">
+                        <input type="number" value="1" min="1" readonly>
+                        <input type="button" class="plus" value="+">
+                        <label class="gb">GB</label>
+                    </div>
+                    <div class="config-item" data-target="mem">
+                        <label for="mem">Mem.</label>
+                        <input type="button" class="minus" value="-">
+                        <input type="number" value="1" min="1" readonly>
+                        <input type="button" class="plus" value="+">
+                        <label class="gb">GB</label>
+                    </div>
+                    <div class="config-item">
+                        <label for="bandwidth">Bandwidth</label>
+                        <input type="button" class="minus" value="-">
+                        <input type="number" value="100" min="1" readonly>
+                        <input type="button" class="plus" value="+">
+                        <label class="gb">GB</label>
+                    </div>
+                </div>
+            </section>
+            <div class="flex-col cuspro">
+                <div class="flex">
+                    <p>$</p>
+                    <input class="price" type="number" value="200" min="200" readonly>
+                    <p class="per-mo">/ Per month</p>
+                </div>
+                <input type="submit" class="buy-now" value="Buy Now">
+            </div>
+        </form>
+
+        <div class="below">
+            <section class="reviews">
+                <h2>Reviews</h2>
+                <iframe src="reviews.html"></iframe>
+            </section>
+            <section class="brand">
+                <h2>Why VPS?</h2>
+                <p>Unlock the full potential of your business with our VPS services! Experience unmatched flexibility, speed, and scalability that outshines traditional cloud hosting and on-premise servers. Enjoy dedicated resources, enhanced security, and 24/7 expert support, all at a fraction of the cost. Upgrade to our VPS and transform your digital infrastructure today!</p>
+                <h2>Our VPS has...</h2>
+                <div class="flex tag">
+                    <p class="brand-tag">Best Price</p>
+                    <p class="brand-tag">Best Warranty</p>
+                    <p class="brand-tag">Best Service</p>
+                </div>
+            </section>
         </div>
-        <div class="app-base-item">
-            <h3>APP Base</h3>
-            <p>Build Your APP with Own VPS service</p>
-            <button>More</button>
-        </div>
-        <div class="app-base-item">
-            <h3>APP Base</h3>
-            <p>Build Your APP with Own VPS service</p>
-            <button>More</button>
-        </div>
-    </section>
-</main>
+
+        <section class="other-items">
+            <div class="other-item">
+                <h3>APP Base</h3>
+                <p>Build Your APP with Own VPS service</p>
+                <a>More</a>
+            </div>
+            <div class="other-item">
+                <h3>APP Base</h3>
+                <p>Build Your APP with Own VPS service</p>
+                <a>More</a>
+            </div>
+            <div class="other-item">
+                <h3>APP Base</h3>
+                <p>Build Your APP with Own VPS service</p>
+                <a>More</a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

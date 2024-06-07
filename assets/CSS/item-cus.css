@@ -4,30 +4,37 @@ body {
     padding: 0;
     background-color: #1a1a1a;
     color: #ffffff;
+}
+
+main {
+    width: 1080px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 30px;
+    background-color: #F8F8F8;
+    color: #000;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.language {
-    margin-left: auto;
+.flex {
+    display: flex;
 }
 
-main {
-    width: 800px;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 30px;
-    background-color: #F8F8F8;
-    color: #000;
+.flex-col {
+    display: flex;
+    flex-direction: column;
 }
 
 .product {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 40px;
+    margin: 40px 0px;
 }
 
 .product-image {
@@ -52,77 +59,231 @@ main {
     font-size: 30px;
 }
 
-.product-details .specs, .product-details .price {
-    font-size: 18px;
+.product-details h1, .product-details p {
+    margin: 5px 0px;
+}
+
+.product-details .instock{
+    color: rgb(144, 144, 144);
+    font-size: 15px;
     margin: 10px 0;
+}
+
+.product-details .price, .product-details .per-mo{
+    color: rgb(90, 90, 90);
+    font-size: 18px;
+    margin: 10px 10px 10px 0px;
 }
 
 .product-details .quantity {
     display: flex;
     align-items: center;
+    justify-content: start;
 }
 
 .product-details .quantity button, .product-details .quantity input {
-    background-color: #bababa;
+    background-color: #f8f8f8;
     border: none;
     color: #000;
-    padding: 5px 10px;
-    margin: 0 5px;
+    padding: 5px;
+    margin: 0;
 }
 
-.product-details .buy-now {
+.quantity button, .quantity input {
+    height: 30px;
+}
+
+.quantity button {
+    width: 30px;
+    height: 40px;
+    text-align: center; 
+}
+
+.quantity input {
+    width: 50px;
+    text-align: center;
+}
+
+.quantity input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}    /*cr: w3school*/
+
+.buy-now {
+    width: 200px;
     background-color: #bababa;
     border: none;
     color: #000;
     padding: 10px 20px;
+    margin: 10px 0px;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 15px;
 }
 
-.product-details .buy-now:hover {
+.buy-now:hover {
     background-color: #00ffcc;
+    font-weight: bold;
     transition: all 0.5s ease-in-out;
+}
+
+.minus, .plus, .buy-now {
+    margin: 10px 0px;
+    height: 30px;
 }
 
 .configuration {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.conf-number {
+    display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin-bottom: 40px;
+    justify-content: space-evenly;
+    margin-left: 40px;
+}
+
+.config-img, .t {
+    position: relative;
+}
+
+.config-img img {
+    width: 300px;
+}
+
+.pro-img-bor {
+    position: absolute;
+    top: 20%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    border: 8px solid transparent;
+    border-radius: 10px;
+    z-index: 20;
+    transition: border 0.5s ease;
+}
+
+.cpu {
+    top: 20%;
+    left: 42%;
+    height: 95px;
+    width: 95px;
+}
+
+.gpu {
+    top: 75%;
+    left: 38%;
+    height: 15px;
+    width: 140px;
+}
+
+.ram {
+    top: 38%;
+    left: 73%;
+    height: 215px;
+    width: 45px;
+}
+
+.mem {
+    top: 88%;
+    left: 93%;
+    height: 44px;
+    width: 24px;
+}
+
+.config-item-hover {
+    background-color: #00ffcc;
+    border-color: #00ffcc;
+    font-weight: bold;
+}
+
+.config-item-hover input[type="number"]{
+    background-color: #00ffcc;
+}
+
+.config-item-hover input[type="button"] {
+    background-color: #f8f8f8;
 }
 
 .config-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: space-around;
+    border: 1px solid #bababa;
+    border-radius: 5px;
+    margin: 10px 0px;
+    width: 300px;
+    height: 45px;
 }
 
 .config-item label {
-    margin-right: 10px;
+    margin: 0px 10px;
+    text-align: left;
+    width: 75px;
 }
 
-.config-item button, .config-item p {
-    
-    color: #000;
-    padding: 5px 10px;
-    margin: 0;
-}
-
-.config-item button{
+.config-item .gb {
+    margin: 0px;
+    text-align: center;
     width: 30px;
 }
 
-.config-item p {
-    width: 50px;
-    margin: 5px 0px;
+.config-item input {
+    background-color: #f8f8f8;
+    border: none;
+    color: #000;
+    padding: 5px;
+    margin: 0;
+}
+
+.config-item input[type="number"] {
+    font-size: 18px;
+    width: 30px;
+    text-align: right;
+}
+
+.config-item input[type="button"] {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+/* .config-item input[type="button"]:hover {
+    background-color: #F8F8F8;
+} */
+
+.flex-col.cuspro {
+    margin: 0px 30px;
+    align-items: center;
+}
+
+.flex-col .price {
+    border: none;
+    background-color: #f8f8f8;
+    text-align: center;
+    width: 100px;
+    font-size: 23px;
+    font-weight: bold;
 }
 
 .reviews {
     width: 40%;
 }
 
-.reviews, .brand, .app-base {
+.reviews, .brand {
+    margin: 10px;
+}
+
+.reviews iframe {
+    width: 400px;
+    height: 350px;
+    border: none;
+}
+
+.reviews, .brand, .other-items {
     margin-bottom: 40px;
 }
 
@@ -132,6 +293,7 @@ main {
 
 .review {
     background-color: #eaeaea;
+    width: 300px;
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -140,30 +302,38 @@ main {
     margin: 5px 0;
 }
 
-.more-reviews {
-    color: #00ffcc;
-    text-decoration: none;
-}
-
 .brand {
     width: 40%;
 }
 
-.brand button {
+.brand p {
+    background-color: #EAEAEA;
+    color: #616161;
+    padding: 5px;
+}
+
+.brand .brand-tag {
     background-color: #00ffcc;
     border: none;
     color: #000;
     padding: 10px 20px;
-    margin: 10px 5px 0 0;
+    margin: 10px 5px;
     cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    width: 105px;
 }
 
-.app-base {
+.flex .tag {
+    justify-content: space-around;
+}
+
+.other-items {
     display: flex;
     justify-content: space-around;
 }
 
-.app-base-item {
+.other-item {
     background-color: #eaeaea;
     padding: 20px;
     text-align: center;
@@ -171,7 +341,7 @@ main {
     margin: 0 10px;
 }
 
-.app-base-item button {
+.other-item a {
     background-color: #00ffcc;
     border: none;
     color: #000;
@@ -181,5 +351,102 @@ main {
 
 .below {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
+
+@media screen and (max-width: 800px) {
+    main {
+        width: 100%;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .product {
+        flex-direction: column;
+        margin: 20px 0;
+    }
+
+    .flex {
+        justify-content: center;
+    }
+
+    .product-details {
+        margin-left: 0;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .quantity {
+        justify-content: center;
+    }
+
+    .buy {
+        justify-content: center;
+    }
+
+    .configuration {
+        flex-direction: column;
+    }
+
+    .conf-number {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .reviews, .brand {
+        width: 100%;
+    }
+
+    .other-items {
+        flex-direction: column;
+    }
+
+    .other-item {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .below {
+        flex-direction: column;
+    }
+
+    .brand {
+        width: 300px;
+    }
+
+    .config-item {
+        width: 100%;
+    }
+}
+
+/* @media screen and (max-width: 375px) {
+    .product-image img {
+        width: 100px;
+        margin: 15px;
+    }
+
+    .product-details h1 {
+        font-size: 24px;
+    }
+
+    .product-details .price {
+        font-size: 16px;
+    }
+
+    .product-details .buy-now {
+        padding: 8px 16px;
+    }
+
+    .config-img img {
+        width: 200px;
+    }
+
+    .config-item {
+        height: 35px;
+    }
+
+    .buy {
+        justify-content: center;
+    }
+} */

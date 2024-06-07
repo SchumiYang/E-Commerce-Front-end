@@ -317,6 +317,10 @@ input::-webkit-inner-spin-button {
         margin: 20px 0;
     }
 
+    .flex {
+        justify-content: center;
+    }
+
     .product-details {
         margin-left: 0;
         text-align: center;
@@ -353,6 +357,10 @@ input::-webkit-inner-spin-button {
         width: 100%;
     }
 
+    .brand {
+        width: 300px;
+    }
+
     .below {
         flex-direction: column;
     }
@@ -362,7 +370,7 @@ input::-webkit-inner-spin-button {
     }
 }
 
-@media screen and (max-width: 375px) {
+/* @media screen and (max-width: 375px) {
     .product-image img {
         width: 100px;
         margin: 15px;
@@ -391,4 +399,4 @@ input::-webkit-inner-spin-button {
     .buy {
         justify-content: center;
     }
-}
+} */
