@@ -9,6 +9,10 @@
     <script src="assets/JS/admin.js" defer></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://kit.fontawesome.com/9b3624985e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -40,13 +44,57 @@
         </div>
         <div class="tab-content">
             <div class="tab-panel active">
+                <div class="header">
+                    <h1>Add Merch</h1>
+                </div>
                 <form action="add.jsp" method="post">
-                    <div class="header">
-                        <h1>Add Merch</h1>
+                    <div class="details">
+                        <div class="product">
+                            <div class="label">Product Name:</div>
+                            <input type="text" name="name" value="" required>
+
+                            <div class="label">Product Description:</div>
+                            <input type="text" name="desc" value="" required>
+
+                            <div class="label">Product Image Path:</div>
+                            <input type="text" name="desc" value="" required>
+
+                            <div class="label">Stocks:</div>
+                            <input type="number" name="stocks" value="" required>
+
+                            <div class="label">Price:</div>
+                            <input type="number" name="price" value="" required>
+                        </div>
+                        <div class="feature">
+                            <div class="label">Core Number:</div>
+                            <input type="number" name="core" value="" required>
+                            <div class="label">RAM(GB):</div>
+                            <input type="number" name="ram" value="" required>
+                            <div class="label">Memory(GB):</div>
+                            <input type="number" name="memory" value="" required>
+                            <div class="label">Bandwidth:</div>
+                            <input type="number" name="Bandwidth" value="" required>
+                        </div>
                     </div>
-                    <div class="add-img-container">
-                        <img src="">
+                    <div class="button-section">
+                        <input type="reset" class="button cancel" value="Reset">
+                        <input type="submit" class="button submit" value="Submit">
                     </div>
+                </form>
+            </div>
+            <div class="tab-panel">
+                <div class="header">
+                    <h1>Manage Merch</h1>
+                </div>
+                <form id="merch-select" class="select" method="post">
+                    <select class="selector" name="goods">
+                        <option value="Merch1">Merch1</option>
+                        <option value="Merch2">Merch2</option>
+                        <option value="Merch3">Merch3</option>
+                    </select>
+                    <i class="fa-solid fa-circle-check check" onclick="$('#merch-select').submit();"></i>
+                </form>
+                <form action="manage.jsp" method="post">
                     <div class="details">
                         <div class="product">
                             <div class="label">Product Name:</div>
@@ -76,19 +124,58 @@
                         </div>
                     </div>
                     <div class="button-section">
-                        <input type="reset" class="cancel-button button cancel" value="Reset">
-                        <input type="submit" class="submit-button button submit" value="Submit">
+                        <input type="submit" class="button submit" value="Submit">
                     </div>
                 </form>
-                <!-- Add your content here -->
             </div>
             <div class="tab-panel">
-                <h2>Manage Merch</h2>
-                <!-- Add your content here -->
-            </div>
-            <div class="tab-panel">
-                <h2>Manage Order</h2>
-                <!-- Add your content here -->
+                <div class="header">
+                    <h1>Manage Order</h1>
+                </div>
+                <div class="order-container">
+                    <div class="order-item">
+                        <div class="order-img">
+                            <img src="assets/img/cpu.jpg" />
+                        </div>
+                        <div class="order-detail">
+                            <p class="order-num">Order #123456</p>
+                            <p class="order-product">AI Based</p>
+                            <p class="order-amount">x4</p>
+                            <p class="order-buyer">from MING</p>
+                        </div>
+                        <div class="order-action">
+                            <i class="fa-solid fa-circle-xmark order-delete" onclick="$('#delete1').submit();"></i>
+                            <form method="post" action="done.jsp">
+                                <input type="hidden" name="order-num" value="123">
+                                <button class="order-done">
+                                    <i class="fa-solid fa-check order-done"></i>
+                                    Complete
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-img">
+                            <img src="assets/img/cpu.jpg" />
+                        </div>
+                        <div class="order-detail">
+                            <p class="order-num">Order #123457</p>
+                            <p class="order-product">AI Based</p>
+                            <p class="order-amount">x4</p>
+                            <p class="order-buyer">from QUAN</p>
+                        </div>
+                        <div class="order-action">
+                            <i class="fa-solid fa-circle-xmark order-delete" onclick="$('#delete2').submit();"></i>
+                            <form method="post" action="done.jsp">
+                                <input type="hidden" name="order-num" value="124">
+                                <button class="order-done">
+                                    <i class="fa-solid fa-check order-done"></i>
+                                    Complete
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
