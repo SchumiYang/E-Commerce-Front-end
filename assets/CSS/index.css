@@ -332,7 +332,9 @@ footer {
     
     .slider {
         height: 450px;
+        overflow: hidden;
     }
+    
 
     .product-list,.product-container {
         max-width: 100vw;
