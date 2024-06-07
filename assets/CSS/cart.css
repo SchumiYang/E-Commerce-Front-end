@@ -14,6 +14,7 @@ h1 {
 
 body {
     background-color: #edede9;
+    font-family: "Noto Sans", sans-serif;
 }
 
 .cart-container {
@@ -165,6 +166,95 @@ body {
 
 .btn:hover {
     transform: scale(1.05);
+}
+
+.finished {
+    margin-top: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    p {
+        font-weight: bold;
+    }
+}
+
+.done-animation {
+    display: flex;
+    width: 128px;
+    height: 128px;
+    margin: auto;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.check {
+    -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    animation: slide-in-bottom 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    border: 5px solid black;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    padding: 16px;
+    font-size: 70px;
+}
+
+.colored {
+    color: #00ffcc;
+}
+
+.action {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.action-btn {
+    border: 0;
+    background-color: #00ffcc;
+    font-size: 16px;
+    font-weight: bold;
+    padding-block: 8px;
+    text-transform: uppercase;
+    border-radius: 16px;
+    cursor: pointer;
+    width: 8rem;
+}
+
+.action-btn:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@-webkit-keyframes slide-in-bottom {
+    0% {
+        -webkit-transform: translateY(1000px);
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-bottom {
+    0% {
+        -webkit-transform: translateY(1000px);
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @media screen and (max-width: 768px) {

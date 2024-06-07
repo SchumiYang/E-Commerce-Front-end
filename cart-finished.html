@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="assets//CSS/cart.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://kit.fontawesome.com/9b3624985e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="nav-placeholder">
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#nav-placeholder").load("nav.html");
+        });
+    </script>
+
+    <div class="finished">
+        <div class="done-animation">
+            <i class="fa-solid fa-check colored check"></i>
+        </div>
+        <h2>Your order has been sent!</h2>
+        <div class="action">
+            <button class="action-btn" onclick="location.href='profile.jsp'">Orders</button>
+            <button class="action-btn" onclick="location.href='index.jsp'">Return</button>
+        </div>
+    </div>
+</body>
+
+</html>
