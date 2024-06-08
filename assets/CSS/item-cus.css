@@ -257,7 +257,7 @@ input::-webkit-inner-spin-button {
 } */
 
 .flex-col.cuspro {
-    margin: 0px 30px;
+    margin-bottom: 30px;
     align-items: center;
 }
 
