@@ -1,4 +1,4 @@
-body {
+main {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
@@ -6,6 +6,8 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #000;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
 }
 
 .container {

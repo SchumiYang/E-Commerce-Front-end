@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="../assets/CSS/reg.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+
+    </div>
+
+    <script>
+    $(function(){
+    $("#nav-placeholder").load("../nav.html");
+    });
+    </script>
+    <main>
+        <div class="container">
+            <div class="left">
+                <h1>Register</h1>
+                <p>Start Your Shopping Now</p>
+                <a href="login.html">Already Have An Account? Click Here</a>
+            </div>
+            <div class="right">
+                <form>
+                    <!-- <label for="username">Username</label> -->
+                    <input type="text" placeholder="Enter Username" id="username" name="username" required>
+                    <!-- <label for="password">Password</label> -->
+                    <input type="password" placeholder="Enter Password" id="password" name="password" required>
+                    <!-- <label for="confirm-password">Confirm Password</label> -->
+                    <input type="password" placeholder="Enter Password Again" id="confirm-password" name="confirm-password" required>
+                    <!-- <label for="email">E-mail</label> -->
+                    <input type="email" placeholder="Email you will remember" id="email" name="email" required>
+                    <!-- <label for="address">Address</label> -->
+                    <input type="text" placeholder="Enter Address" id="address" name="address" required>
+                    <br><br>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
