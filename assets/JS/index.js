@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     const list = document.querySelector('.list');
     const items = document.querySelectorAll('.slider .list .item');
     const dots = document.querySelectorAll('.slider .dots li');
@@ -20,7 +20,8 @@ $(document).ready(function() {
 
     function startSliderInterval() {
         refreshSlider = setInterval(() => {
-            next.click();
+            active = (active + 1 > lengthItems) ? 0 : active + 1;
+            reloadSlider();
         }, 5000);
     }
 
@@ -50,7 +51,7 @@ $(document).ready(function() {
 
     const scrollers = document.querySelectorAll('.scroller');
 
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         addAnimation();
     }
 
@@ -70,6 +71,6 @@ $(document).ready(function() {
     }
 
     // Uncomment the line below to start the slider interval when the page loads
-    // startSliderInterval();
+    startSliderInterval();
 
 });
