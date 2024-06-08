@@ -226,6 +226,12 @@ input::-webkit-inner-spin-button {
     text-align: right;
 }
 
+.config-item .gb {
+    margin: 0px;
+    text-align: center;
+    width: 44px;
+}
+
 .reviews {
     width: 40%;
 }
