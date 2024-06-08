@@ -1,32 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     const configItems = document.querySelectorAll('.config-item');
-    const priceInput = document.querySelector('.price');
-    const priceStep = 100; // 每次增減的價格
-    var price = document.querySelector('.price');
-
-    // 更新價格函數
-    function updatePrice(change) {
-        let currentPrice = parseInt(priceInput.value, 10);
-        currentPrice += change;
-        priceInput.value = currentPrice;
-    }
 
     configItems.forEach(configItem => {
         const targetClass = configItem.getAttribute('data-target');
         const targetElem = document.querySelector(`.${targetClass}`);
-        const inputNumber = configItem.querySelector('input[type="number"]');
-        const minusButton = configItem.querySelector('.minus');
-        const plusButton = configItem.querySelector('.plus');
 
-        // Mouseover and mouseout event listeners
         configItem.addEventListener('mouseover', function() {
             if (targetElem) {
                 targetElem.style.borderColor = '#00ffcc';
             }
             configItem.classList.add('config-item-hover');
-            if (inputNumber) {
-                inputNumber.style.backgroundColor = '#00ffcc';
-            }
         });
 
         configItem.addEventListener('mouseout', function() {
@@ -34,106 +17,79 @@ document.addEventListener('DOMContentLoaded', function() {
                 targetElem.style.borderColor = 'transparent';
             }
             configItem.classList.remove('config-item-hover');
-            if (inputNumber) {
-                inputNumber.style.backgroundColor = ''; // 恢復原來的背景顏色
-            }
-        });
-
-        // Click event listeners for minus and plus buttons
-        minusButton.addEventListener('click', function() {
-            let currentValue = parseInt(inputNumber.value, 10);
-            if (currentValue > parseInt(inputNumber.min, 10)) {
-                inputNumber.value = currentValue - 1;
-                price.value = Number(price.value) - 100;
-                updatePrice(-priceStep);
-            } else {
-                alert("At least 1");
-            }
-        });
-
-        plusButton.addEventListener('click', function() {
-            let currentValue = parseInt(inputNumber.value, 10);
-            inputNumber.value = currentValue + 1;
-            price.value = Number(price.value) + 100;
-            updatePrice(priceStep);
         });
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const configItems = document.querySelectorAll('.config-item');
+    var getPrice = document.getElementById('getp');
+    var sub = document.getElementById('submit');
 
+    configItems.forEach(item => {
+        const target = item.getAttribute('data-target');
+        const step = parseInt(item.getAttribute('data-step'));
+        const input = item.querySelector('input[type="number"]');
+        const minusButton = item.querySelector('.minus');
+        const plusButton = item.querySelector('.plus');
 
+        if (target === 'bandwidth') {
+            minusButton.addEventListener('click', () => {
+                let value = parseInt(input.value);
+                if (value - step >= input.min) {
+                    input.value = (value - step);
+                    sub.disabled = true;
+                } else {
+                    alert("At least " + input.min);
+                }
+            });
 
+            plusButton.addEventListener('click', () => {
+                let value = parseInt(input.value);
+                if (value + step <= input.max) {
+                    input.value = (value + step);
+                    sub.disabled = true;
+                } else {
+                    alert("Maximum " + input.max);
+                }
+            });
+        } else {
+            minusButton.addEventListener('click', () => {
+                let value = parseInt(input.value);
+                if (value > input.min) {
+                    input.value = (value /= 2);
+                    sub.disabled = true;
+                } else {
+                    alert("At least " + input.min);
+                }
+            });
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const configItems = document.querySelectorAll('.config-item');
+            plusButton.addEventListener('click', () => {
+                let value = parseInt(input.value);
+                if (value < input.max) {
+                    input.value = (value *= 2);
+                    sub.disabled = true;
+                } else {
+                    alert("Maximum " + input.max);
+                }
+            });
+        }
+    });
+});
 
-//     configItems.forEach(configItem => {
-//         const targetClass = configItem.getAttribute('data-target');
-//         const targetElem = document.querySelector(`.${targetClass}`);
+function getprice() {
+    var cpunum = parseInt(document.getElementById('cpu').value);
+    var gpunum = parseInt(document.getElementById('gpu').value);
+    var ramnum = parseInt(document.getElementById('ram').value);
+    var memnum = parseInt(document.getElementById('mem').value);
+    var bwnum = parseInt(document.getElementById('bw').value);
+    var sub = document.getElementById('submit');
 
-//         configItem.addEventListener('mouseover', function() {
-//             if (targetElem) {
-//                 targetElem.style.borderColor = '#00ffcc';
-//             }
-//             configItem.classList.add('config-item-hover');
-//         });
+    var price = 100;
+    var memPrice = 10;
 
-//         configItem.addEventListener('mouseout', function() {
-//             if (targetElem) {
-//                 targetElem.style.borderColor = 'transparent';
-//             }
-//             configItem.classList.remove('config-item-hover');
-//         });
-//     });
-// });
+    var total = (cpunum + gpunum + ramnum ) * price + memnum * memPrice + bwnum;
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const configItems = document.querySelectorAll('.config-item');
-
-//     configItems.forEach(configItem => {
-//         const targetClass = configItem.getAttribute('data-target');
-//         const targetElem = document.querySelector(`.${targetClass}`);
-//         const inputNumber = configItem.querySelector('input[type="number"]');
-
-//         configItem.addEventListener('mouseover', function() {
-//             if (targetElem) {
-//                 targetElem.style.borderColor = '#00ffcc';
-//             }
-//             configItem.classList.add('config-item-hover');
-//             if (inputNumber) {
-//                 inputNumber.style.backgroundColor = '#00ffcc';
-//             }
-//         });
-
-//         configItem.addEventListener('mouseout', function() {
-//             if (targetElem) {
-//                 targetElem.style.borderColor = 'transparent';
-//             }
-//             configItem.classList.remove('config-item-hover');
-//             if (inputNumber) {
-//                 inputNumber.style.backgroundColor = ''; // 恢复原来的背景颜色
-//             }
-//         });
-//     });
-// });
-
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     const minusButton = document.querySelector('.quantity .minus');
-//     const plusButton = document.querySelector('.quantity .plus');
-//     const inputField = document.querySelector('.quantity input[type="number"]');
-
-//     minusButton.addEventListener('click', function() {
-//         let currentValue = parseInt(inputField.value);
-//         if (currentValue > 1) {
-//             inputField.value = currentValue - 1;
-//         } else {
-//             alert("At least 1");
-//         }
-//     });
-
-//     plusButton.addEventListener('click', function() {
-//         let currentValue = parseInt(inputField.value);
-//         inputField.value = currentValue + 1;
-//     });
-// });
+    document.getElementById('price').value = total;
+    sub.disabled = false;
+}

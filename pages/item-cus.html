@@ -47,38 +47,38 @@
                     <img class="t" src="../assets/img/board.webp"></img>
                 </div>
                 <div class="conf-number">
-                    <div class="config-item" data-target="cpu">
+                    <div class="config-item" data-target="cpu" data-step="2">
                         <label for="vcpu">vCPU</label>
                         <input type="button" class="minus" value="-">
-                        <input type="number" value="1" min="1" readonly>
+                        <input type="number" id="cpu" value="1" min="1" max="128" readonly>
                         <input type="button" class="plus" value="+">
                         <label class="gb">GB</label>
                     </div>
-                    <div class="config-item" data-target="gpu">
+                    <div class="config-item" data-target="gpu" data-step="2">
                         <label for="ram">vGPU</label>
                         <input type="button" class="minus" value="-">
-                        <input type="number" value="1" min="1" readonly>
+                        <input type="number" id="gpu" value="1" min="1" max="256" readonly>
                         <input type="button" class="plus" value="+">
                         <label class="gb">GB</label>
                     </div>
-                    <div class="config-item" data-target="ram">
+                    <div class="config-item" data-target="ram" data-step="2">
                         <label for="ram">RAM</label>
                         <input type="button" class="minus" value="-">
-                        <input type="number" value="1" min="1" readonly>
+                        <input type="number" id="ram" value="1" min="1" max="512" readonly>
                         <input type="button" class="plus" value="+">
                         <label class="gb">GB</label>
                     </div>
-                    <div class="config-item" data-target="mem">
+                    <div class="config-item" data-target="mem" data-step="2">
                         <label for="mem">Mem.</label>
                         <input type="button" class="minus" value="-">
-                        <input type="number" value="1" min="1" readonly>
+                        <input type="number" id="mem" value="16" min="16" max="2048" readonly>
                         <input type="button" class="plus" value="+">
                         <label class="gb">GB</label>
                     </div>
-                    <div class="config-item">
+                    <div class="config-item" data-target="bandwidth" data-step="100">
                         <label for="bandwidth">Bandwidth</label>
                         <input type="button" class="minus" value="-">
-                        <input type="number" value="100" min="1" readonly>
+                        <input type="number" id="bw" value="100" min="100" max="2000" readonly>
                         <input type="button" class="plus" value="+">
                         <label class="gb">GB</label>
                     </div>
@@ -87,10 +87,11 @@
             <div class="flex-col cuspro">
                 <div class="flex">
                     <p>$</p>
-                    <input class="price" type="number" value="200" min="200" readonly>
+                    <input id="price" class="price" type="text" value="560" min="560" readonly>
                     <p class="per-mo">/ Per month</p>
                 </div>
-                <input type="submit" class="buy-now" value="Buy Now">
+                <input id="getp" class="buy-now" type="button" value="Get Your Price" onclick="getprice()">
+                <input id="submit" type="submit" class="buy-now" value="Buy Now">
             </div>
         </form>
 
