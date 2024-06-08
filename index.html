@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="assets/CSS/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <title>main page</title>
 </head>
@@ -27,7 +26,7 @@
     </script>
     <!--end of Navigation bar-->
 
-    <main class="content">
+    <main>
         <div class="slider">
             <div class="list">
                 <div class="item">
@@ -140,72 +139,76 @@
                 </div>
             </div>
         </div>
-
-        <div class="card-container">
-            <div class="card1">
-                <div class="card-title">
-                    <h1>What is VPS?</h1>
+        <div class="info-container">
+            <div class="card-container">
+                <div class="card vps-card">
+                    <div class="card-detail">
+                        <div class="card-title">
+                            <h1>What is VPS?</h1>
+                        </div>
+                        <div class="card-content">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, commodi!</p>
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button>
+                            Learn More
+                        </button>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, commodi!</p>
-                </div>
-                <div class="card-button">
-                    <button>
-                        Learn More
-                    </button>
+                <div class="card developer-card">
+                    <div class="card-detail">
+                        <div class="card-title">
+                            <p>Meet the</p>
+                            <h1>Developer team</h1>
+                        </div>
+                        <div class="card-content">
+                            <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, commodi!</p> -->
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button>
+                            Learn More
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div class="card2">
-                <div class="card-title">
-                    <p>Meet the</p>
-                    <h1>Developer team</h1>
-                </div>
-                <div class="card-content">
-                    <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, commodi!</p> -->
-                </div>
-                <div class="card-button">
-                    <button>
-                        Learn More
-                    </button>
+
+            <div class="form-container">
+                <div class="form">
+                    <div class="form-title1">
+                        Contact Us
+                    </div>
+                    <div class="form-title2">
+                        Leave your message here
+                    </div>
+                    <form action="/action_page.php" id="userform">
+                        <div class="form-title"></div>
+                        <div class="form-email">
+                            <div class="form-desc">Your E-mail</div>
+                            <textarea name="comment" form="usrform"></textarea>
+                        </div>
+                        <div class="form-message">
+                            <div class="form-desc">Message</div>
+                            <textarea rows="4" name="comment" form="usrform"></textarea>
+                        </div>
+                        <div class="form-button">
+                            <input type="submit" value="Send">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-
-        <div class="form-container">
-            <div class="form">
-                <div class="form-title1">
-                    Contact Us
-                </div>
-                <div class="form-title2">
-                    Leave your message here
-                </div>
-                <form action="/action_page.php" id="userform">
-                    <div class="form-title"></div>
-                    <div class="form-email">
-                        <div class="form-desc">Your E-mail</div>
-                        <textarea name="comment" form="usrform"></textarea>
-                    </div>
-                    <div class="form-message">
-                        <div class="form-desc">Message</div>
-                        <textarea rows="4" name="comment" form="usrform"></textarea>
-                    </div>
-                    <div class="form-button">
-                        <input type="submit" value="Send">
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <footer>
-            <div class="copyright">
-                copyright...
-            </div>
-            <div class="counter">
-                <div>Vistor count:</div>
-                <div>0</div>
-            </div>
-        </footer>
     </main>
+    <footer>
+        <div class="copyright">
+            copyright...
+        </div>
+        <div class="counter">
+            <div>Vistor count:</div>
+            <div>0</div>
+        </div>
+    </footer>
     <script src="assets/JS/index.js" defer></script>
 </body>
 
