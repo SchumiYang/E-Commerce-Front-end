@@ -1,10 +1,10 @@
-*{
+* {
     padding: 0px;
     margin: 0px;
     /*width: 100%;*/
 }
 
-header{
+header {
     position: relative;
     padding-left: 10%;
     padding-right: 10%;
@@ -13,20 +13,20 @@ header{
     background-color: black;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    color:#39FFC4;
+    color: #39FFC4;
     transition: top 0.5s;
 }
 
-.mobile{
+.mobile {
     display: none;
 }
 
-.desktop{
+.desktop {
     display: grid;
 }
 
-header a{
-    color:#39FFC4;
+header a {
+    color: #39FFC4;
 }
 
 header a:link {
@@ -45,59 +45,63 @@ header a:active {
     text-decoration: none;
 }
 
-header img{
+header img {
     max-height: 80px;
     /* background-color: white; */
 }
 
-header div{
+header div {
     text-align: center;
     vertical-align: middle;
-    line-height: 80px;       /* The same as your div height */
+    line-height: 80px;
+    /* The same as your div height */
     font-size: 20px;
     font-family: "Nunito Sans", sans-serif;
     height: 80px;
 }
 
-header .dropdown-menu{
+header .dropdown-menu {
     display: inline-block;
     position: relative;
 }
 
-header .dropdown-icon-text{
+header .dropdown-icon-text {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 10px;
 }
 
-header .dropdown-arrow{
+header .dropdown-arrow {
     height: 80px;
     width: 20px;
 }
 
-header .dropdown-content{
+header .dropdown-content {
     display: none;
-
 }
 
-header .dropdown-menu:hover .dropdown-content{
+header .dropdown-menu:hover .dropdown-content {
     display: block;
 }
 
 header .dropdown-content a {
     color: white;
-    background-color: grey;
+    background-color: #3e3e3e;
     text-decoration: none;
     display: block;
 }
 
-header .profile{
+header .dropdown-content a:hover {
+    background-color: #494949;
+}
+
+header .profile {
     display: flex;
     gap: 10px;
 }
 
-header .profile img{
+header .profile img {
     height: 50px;
     width: 50px;
     justify-content: center;
@@ -110,41 +114,50 @@ header .profile img{
 */
 
 @media screen and (max-width:1200px) {
-    .mobile{
+    .mobile {
         display: grid;
     }
-    .desktop{
+
+    .desktop {
         display: none;
     }
 
-    header{
+    header {
         padding-left: 0;
         padding-right: 0;
     }
 
-    .menu{
+    .menu {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .menu .menu-dropdown{
+    .menu .menu-dropdown {
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+    }
+
+    .menu img {
         height: 50px;
         width: 50px;
     }
 
-    .menu img{
-        height: 50px;
-        width: 50px;
-    }
-
-    .mega-menu{
+    .mega-menu {
         grid-column: 1 / span 9;
     }
 
-    .mega-menu ul{
+    .mega-menu ul {
         background-color: #3e3e3e;
         list-style-type: none;
     }
 
+    .mega-menu ul li {
+        cursor: pointer;
+    }
+
+    .mega-menu ul li:hover {
+        background-color: #494949;
+    }
 }
