@@ -8,7 +8,7 @@ body {
     background-color: white;
     color: black;
     font-family: "Noto Sans", sans-serif;
-    overflow-x: hidden;
+    
 }
 
 #nav-placeholder {
@@ -23,6 +23,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
 }
 
 .slider {
