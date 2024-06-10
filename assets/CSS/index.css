@@ -224,7 +224,7 @@ main {
 .card {
     display: flex;
     flex-direction: column;
-    width: min(90vw, 30rem);
+    width: max(90vw, 50%);
     height: 500px;
     color: white;
     justify-content: space-between;
