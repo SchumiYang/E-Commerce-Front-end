@@ -79,7 +79,6 @@ header .dropdown-arrow {
 
 header .dropdown-content {
     display: none;
-
 }
 
 header .dropdown-menu:hover .dropdown-content {
@@ -88,9 +87,13 @@ header .dropdown-menu:hover .dropdown-content {
 
 header .dropdown-content a {
     color: white;
-    background-color: grey;
+    background-color: #3e3e3e;
     text-decoration: none;
     display: block;
+}
+
+header .dropdown-content a:hover {
+    background-color: #494949;
 }
 
 header .profile {
@@ -150,4 +153,11 @@ header .profile img {
         list-style-type: none;
     }
 
+    .mega-menu ul li {
+        cursor: pointer;
+    }
+
+    .mega-menu ul li:hover {
+        background-color: #494949;
+    }
 }
