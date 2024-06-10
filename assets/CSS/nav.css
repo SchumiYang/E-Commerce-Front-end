@@ -63,6 +63,7 @@ header div {
 header .dropdown-menu {
     display: inline-block;
     position: relative;
+    z-index: 5;
 }
 
 header .dropdown-icon-text {
