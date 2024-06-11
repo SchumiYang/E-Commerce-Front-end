@@ -5,11 +5,31 @@
 
 body{
     background-color: #2D2D2D;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .content{
     /* background-color: aqua; */
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    width: 1080px;
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content h2 {
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+    color: #2e2e2e;
 }
 
 .location-container{
@@ -25,20 +45,35 @@ body{
     display: flex;
     flex-direction: column;
     row-gap: 30px;
+    padding: 20px;
 }
 
 .address{
-    background-color: gray;
-    height: 220px;
+    background-color: rgb(170, 170, 170);
+    height: 110px;
     width: 220px;
     font-size: 20px;
     text-align: center;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 10px;
+    color: #2D2D2D;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.address:hover {
+    background-color: #00ffcc;
+    border: 1px solid #00ffcc;
+    color: white;
+    font-weight: bold;
+    scale: 1.05s;
 }
 
 .map{
     /* background-color:chocolate; */
     display: block;
     width: 100%;
+    height: 380px;
     padding: 30px;
     z-index: 1;
 }
