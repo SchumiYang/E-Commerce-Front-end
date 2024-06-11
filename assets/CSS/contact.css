@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #2D2D2D;
+}
+
+.content{
+    /* background-color: aqua; */
+    margin-top: 50px;
+}
+
+.location-container{
+    /* background-color: crimson; */
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.address-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.address{
+    background-color: gray;
+    height: 220px;
+    width: 220px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.map{
+    /* background-color:chocolate; */
+    display: block;
+    width: 100%;
+    padding: 30px;
+    z-index: 1;
+}
+
+.map2{
+    display: none;
+    width: 100%;
+    padding: 30px;
+    z-index: -99;
+}
+
+.map3{
+    display: none;
+    width: 100%;
+    padding: 30px;
+    z-index: -99;
+}
+
+.map iframe, .map2 iframe, .map3 iframe{
+    width: 100%;
+    height: 100%;
+}
