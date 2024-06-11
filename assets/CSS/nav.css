@@ -162,7 +162,7 @@ header .profile img {
         background-color: #494949;
     }
 
-    .profile p {
+    .hidden {
         display: none;
     }
 }
