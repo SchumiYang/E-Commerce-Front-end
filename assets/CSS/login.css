@@ -97,3 +97,35 @@ button {
 button:hover {
     background-color: #02F5D1;
 }
+
+@media screen and (max-width: 800px) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin: 15px;
+    }
+
+    .left, .right {
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .left {
+        height: 150px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .left p, .left p {
+        display: none;
+    }
+
+    .right {
+        border-radius: 0 0 30px 30px;
+        border: none;
+    }
+
+    button {
+        width: 100%;
+    }
+}
