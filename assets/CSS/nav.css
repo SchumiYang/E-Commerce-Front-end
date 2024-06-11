@@ -161,4 +161,8 @@ header .profile img {
     .mega-menu ul li:hover {
         background-color: #494949;
     }
+
+    .profile p {
+        display: none;
+    }
 }
