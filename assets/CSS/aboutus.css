@@ -5,6 +5,8 @@
 
 body{
     background-color: #2D2D2D;
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
 }
 
 .container{
@@ -31,8 +33,9 @@ body{
 
 .member{
     width: 350px;
-    height: 500px;
+    height: 1000px;
     padding: 50px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,12 +57,25 @@ body{
     display: flex;
     flex-direction: row;
     width: 80%;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .icon img{
     height: 50px;
     width: 50px;
+    margin: 0px 10px;
+}
+
+.icon svg {
+    height: 25px;
+    width: 25px;
+    fill: white;
+    margin: 0px 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.icon svg:hover {
+    fill: #00ffd5;
 }
 
 .reflection{
