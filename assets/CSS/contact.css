@@ -9,6 +9,13 @@ body{
     font-optical-sizing: auto;
 }
 
+#nav-placeholder {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 5;
+}
+
 main {
     display: flex;
     flex-direction: column;
