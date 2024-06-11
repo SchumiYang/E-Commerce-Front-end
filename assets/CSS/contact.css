@@ -17,9 +17,9 @@ main {
 
 .content{
     /* background-color: aqua; */
-    /* margin-top: 50px; */
-    width: 1080px;
-    background-color: #eeeeee;
+    padding: 20px;
+    width: 80%;
+    /* background-color: #eeeeee; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,70 +29,86 @@ main {
     text-align: center;
     margin: 20px;
     font-size: 30px;
-    color: #2e2e2e;
+    color: White;
 }
 
 .location-container{
     /* background-color: crimson; */
-    width: 75%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
 }
 
 .address-container{
-    display: flex;
     flex-direction: column;
-    row-gap: 30px;
-    padding: 20px;
+    flex-shrink: 0;
+    row-gap: 0px;
+    background-color: yellow;
+    height: 100%;
+    width: 355px;
+    overflow-y: scroll;
 }
 
 .address{
-    background-color: rgb(170, 170, 170);
-    height: 110px;
-    width: 220px;
+    background-color: white;
+    height: 200px;
+    width: 100%;
     font-size: 20px;
-    text-align: center;
+    text-align: left;
     border: 1px solid rgb(170, 170, 170);
-    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    /* border-radius: 10; */
     color: #2D2D2D;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
+.store-name{
+    font-size: 30px;
+}
+
+.opened{
+    color:rgb(31, 255, 42);
+}
+
+.closed{
+    color: rgb(255, 38, 0);
+}
+
+.operation-time{
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.addr{
+    font-size: 15px;
+}
+
+.contact-number{
+    font-size: 15px;
+}
+
 .address:hover {
-    background-color: #00ffcc;
-    border: 1px solid #00ffcc;
-    color: white;
-    font-weight: bold;
-    scale: 1.05s;
+    background-color: #eeeeee;
 }
 
 .map{
     /* background-color:chocolate; */
     display: block;
     width: 100%;
-    height: 380px;
-    padding: 30px;
+    height: 100%;
     z-index: 1;
 }
 
-.map2{
-    display: none;
-    width: 100%;
-    padding: 30px;
-    z-index: -99;
-}
-
-.map3{
-    display: none;
-    width: 100%;
-    padding: 30px;
-    z-index: -99;
-}
-
-.map iframe, .map2 iframe, .map3 iframe{
+.map iframe{
     width: 100%;
     height: 100%;
 }
+
