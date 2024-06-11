@@ -110,6 +110,10 @@ header .profile img {
     vertical-align: middle;
 }
 
+header .profile .hidden {
+    display: block;
+}
+
 /*header div:nth-child(n+3){
     border-left: solid darkgray;
 */
@@ -162,7 +166,7 @@ header .profile img {
         background-color: #494949;
     }
 
-    .hidden {
+    header .profile .hidden {
         display: none;
     }
 }
