@@ -4,6 +4,7 @@
 }
 
 body {
+    background-color: #1a1a1a;
     font-family: "Noto Sans", sans-serif;
 }
 
@@ -20,15 +21,17 @@ h1 {
     max-width: max(60vw, 42rem);
     transition: all 1s;
     margin: auto;
-    border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-top: 80px;
+    min-height: 70vh
 }
 
 .tab-sidebar {
     background-color: #f1f1f1;
     padding: 20px;
     width: 200px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .tab-btn {
@@ -82,9 +85,12 @@ h1 {
 }
 
 .tab-content {
+    background-color: #f1f1f1;
     flex: 1;
     padding: 20px;
     border: 1px solid #ccc;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .tab-panel {
@@ -287,9 +293,14 @@ input:focus {
     transition: all 0.3s ease-in-out;
 }
 
-
 .edit:hover {
     scale: 1.05;
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .tform {
@@ -300,12 +311,13 @@ input:focus {
 }
 
 .review-form-container {
+    transition: all 0.1s;
     display: none;
     flex-direction: column;
-    background-color: #fff;
+    background-color: #f1f1f1;
     padding: 8px;
     margin: 10px 0px;
-    width: 465px;
+    width: max(30vw, 24rem);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -340,16 +352,16 @@ input:focus {
     cursor: pointer;
 }
 
-.stars input[type="radio"]:checked ~ label {
+.stars input[type="radio"]:checked~label {
     color: gold;
 }
 
 .stars label:hover,
-.stars label:hover ~ label {
+.stars label:hover~label {
     color: gold;
 }
 
-.review-form  textarea {
+.review-form textarea {
     width: calc(100% - 22px);
     padding: 10px;
 }
@@ -409,7 +421,9 @@ input:focus {
         order: 1;
     }
 
-    .order-item {
-        width: 80%;
+    .order-item,
+    .tag,
+    .review-form-container {
+        width: 100%;
     }
 }

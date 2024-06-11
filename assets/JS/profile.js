@@ -68,7 +68,7 @@ function back() {
     form.style.display = 'none';
 }
 
-document.querySelectorAll('.commet-btn').forEach(button => {
+document.querySelectorAll('.comment-btn').forEach(button => {
     button.addEventListener('click', function() {
         var commentSection = this.closest('.tag');
         var commentArea = commentSection.querySelector('.review-form-container');
