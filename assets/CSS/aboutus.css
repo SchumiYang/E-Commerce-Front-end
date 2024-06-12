@@ -169,3 +169,16 @@ body{
       background-position-x: 300vw;
     }
   }
+
+@media screen and (max-width: 900px){
+    .member-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+    }
+
+    .member{
+        width: 80%;
+    }
+}
