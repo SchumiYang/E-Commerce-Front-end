@@ -203,6 +203,10 @@ main {
     cursor: pointer;
 }
 
+.customize .product-desc {
+    align-items: start;
+}
+
 @media screen and (max-width: 1024px) {
     main {
         display: flex;
