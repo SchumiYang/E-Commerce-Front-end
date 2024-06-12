@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>item</title>
-    <link rel="stylesheet" href="../assets/CSS/contact.css">
+    <link rel="stylesheet" href="../assets/CSS/location.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,7 @@
             <h2>Find a store</h2>
             <div class="location-container">
                 <div class="address-container">
-                    <button class="address" id="address1" onclick="loadMap(0)">
+                    <button class="address" id="address1" onclick="loadMap(0); mapToggle();">
                         <div class="store-name">CYCU</div>
                         <div class="operation-time">
                             <div class="status opened">Opened</div>
@@ -37,7 +37,7 @@
                         <div class="contact-number">09-11 111 111</div>
                     </button>
 
-                    <button class="address" id="address2" onclick="loadMap(1)">
+                    <button class="address" id="address2" onclick="loadMap(1); mapToggle();">
                         <div class="store-name">CYCU Second Branch</div>
                         <div class="operation-time">
                             <div class="status opened">Opened</div>
@@ -48,7 +48,7 @@
                         <div class="contact-number">09-22 222 222</div>
                     </button>
 
-                    <button class="address" id="address2" onclick="loadMap(2)">
+                    <button class="address" id="address2" onclick="loadMap(2); mapToggle();">
                         <div class="store-name">CYCU Third Branch</div>
                         <div class="operation-time">
                             <div class="status closed">Closed</div>
@@ -59,7 +59,7 @@
                         <div class="contact-number">09-33 333 333</div>
                     </button>
 
-                    <button class="address" id="address2" onclick="loadMap(1)">
+                    <button class="address" id="address2" onclick="loadMap(1); mapToggle();">
                         <div class="store-name">CYCU Forth Branch</div>
                         <div class="operation-time">
                             <div class="status opened">Opened</div>
@@ -70,7 +70,7 @@
                         <div class="contact-number">09-44 444 444</div>
                     </button>
 
-                    <button class="address" id="address1" onclick="loadMap(0)">
+                    <button class="address" id="address1" onclick="loadMap(0); mapToggle();">
                         <div class="store-name">CYCU Fifth Branch</div>
                         <div class="operation-time">
                             <div class="status opened">Opened</div>
@@ -80,16 +80,18 @@
                         <div class="addr">No. 200, Zhongbei Rd, Zhongli District, Taoyuan City, Taiwan 320</div>
                         <div class="contact-number">09-55 555 555</div>
                     </button>
-
                 </div>
                 <div class="map">
                     <iframe id="addrID" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d829.2618310285651!2d121.24014760662376!3d24.95707635539268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468221447a0f021%3A0x2b86d2650bb8bcff!2sChung%20Yuan%20Christian%20University!5e0!3m2!1sen!2skr!4v1718062093769!5m2!1sen!2skr"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameBorder="0">
                     </iframe>
                 </div>
+                <div class="fixbutton">
+                    <button id="maptoggle" onclick="mapToggle()"><img src="/E-Commerce-Front-end//assets/img/google-maps.png"></button>
+                </div>
             </div>
         </div>
     </main>
-    <script src="../assets/JS/contact.js"></script>
+    <script src="../assets/JS/location.js"></script>
 </body>
 </html>

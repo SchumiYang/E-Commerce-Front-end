@@ -8,3 +8,20 @@ function loadMap(index){
     document.querySelector('#addrID').setAttribute('src', mapSrc);
     console.log(addr_list[index]);
 }
+
+function mapToggle(){
+    var div = document.querySelector(".address-container");
+    var button = document.querySelector(".fixbutton");
+    var mediaQuery = window.matchMedia("(max-width: 1000px)");
+    console.log(div);
+    if (mediaQuery.matches){
+        if (!div.classList.contains("hidden")) {
+            div.classList.add("hidden");
+            button.classList.remove("hidden");
+        }
+        else {
+            div.classList.remove("hidden");
+            button.classList.add("hidden");
+        }
+    }
+}
