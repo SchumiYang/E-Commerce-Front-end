@@ -8,10 +8,10 @@ body {
 }
 
 main {
-    width: 1080px;
+    width: auto;
     padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-top: 20px;
     border-radius: 30px;
     background-color: #F8F8F8;
@@ -20,6 +20,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .flex {
@@ -285,37 +286,35 @@ input[type=number] {
     margin: 5px;
 }
 
-.reviews {
+.reviews, .brand {
     width: 40%;
 }
 
-.reviews, .brand {
-    margin: 10px;
+.reviews {
+    position: relative;
 }
 
-.reviews iframe {
+.reviews-container{
+    width: 100%;
+}
+
+.reviews-container iframe {
     width: 400px;
     height: 350px;
     border: none;
+
 }
 
-.reviews, .brand, .other-items {
+.reviews, .brand {
+    margin-bottom: 40px;
+}
+
+.other-items {
     margin-bottom: 40px;
 }
 
 .reviews h2, .brand h2 {
     font-size: 24px;
-}
-
-.review {
-    background-color: #eaeaea;
-    width: 300px;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.review p {
-    margin: 5px 0;
 }
 
 .brand {
@@ -380,15 +379,15 @@ input[type=number] {
 }
 
 .below {
+    width: 95%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
     main {
-        width: 100%;
-        margin: 10px;
-        padding: 10px;
         border-radius: 20px;
     }
 
@@ -422,31 +421,44 @@ input[type=number] {
     .conf-number {
         margin-left: 0;
         margin-top: 20px;
-    }
-
-    .reviews, .brand {
-        width: 100%;
-    }
-
-    .other-items {
-        flex-direction: column;
-    }
-
-    .other-item {
-        margin: 10px 0;
-        width: 100%;
-    }
-
-    .below {
-        flex-direction: column;
-    }
-
-    .brand {
-        width: 300px;
+        width: 280px;
     }
 
     .config-item {
         width: 100%;
+    }
+
+    .below {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reviews, .brand {
+        width: 80%;
+    }
+
+    .reviews h2, .brand h2{
+        text-align: center;
+        margin: 10px;
+    }
+
+    .reviews-container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .other-items {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .other-item {
+        margin: 10px 0;
+        width: 90%;
     }
 }
 
