@@ -45,8 +45,13 @@ header a:active {
     text-decoration: none;
 }
 
+.logo{
+    padding:10px;
+    height: 60px;
+}
+
 header img {
-    max-height: 80px;
+    max-height: 60px;
     /* background-color: white; */
 }
 
