@@ -214,16 +214,53 @@ header .profile .hidden {
     }
 }
 
-@media screen and (max-width:530px) {
+@media screen and (max-width:590px) {
+    header{
+        height:60px;
+    }
+
     .profile-icon-container{
         display: none;
     }
 
     .small-logo{
         display: block;
+        height: 50px;
+        width: 50px;
+        padding: 5px;
+    }
+
+    .small-logo img{
+        height: 50px;
+        width: 50px;
     }
 
     .logo{
         display: none;
     }
+
+    .search-bar input{
+        font-size: 16px;
+        padding: 6px;
+    }
+
+    .menu{
+        height: 60px;
+    }
+
+    .menu .menu-dropdown {
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+    }
+
+    .menu .menu-dropdown img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .line-height80{
+        line-height: 60px;
+    }
+
 }
