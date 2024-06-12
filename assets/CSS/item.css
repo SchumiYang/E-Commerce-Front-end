@@ -93,6 +93,10 @@ main {
     margin: 0;
 }
 
+.quantity-container{
+    display: flex;
+}
+
 .quantity button, .quantity input {
     height: 30px;
 }
@@ -371,6 +375,12 @@ input[type=number] {
         margin-left: 0;
         text-align: center;
         max-width: 100%;
+    }
+
+    .quantity-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .quantity {
