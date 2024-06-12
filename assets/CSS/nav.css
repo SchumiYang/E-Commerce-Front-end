@@ -150,6 +150,7 @@ header .profile .hidden {
     }
 
     .mega-menu {
+        z-index: 2;
         grid-column: 1 / span 9;
     }
 
