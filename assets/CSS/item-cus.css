@@ -288,6 +288,7 @@ input[type=number] {
 
 .reviews, .brand {
     width: 40%;
+    margin-bottom: 40px;
 }
 
 .reviews {
@@ -299,14 +300,10 @@ input[type=number] {
 }
 
 .reviews-container iframe {
-    width: 400px;
+    width: 100%;
     height: 350px;
     border: none;
 
-}
-
-.reviews, .brand {
-    margin-bottom: 40px;
 }
 
 .other-items {
@@ -319,6 +316,9 @@ input[type=number] {
 
 .brand {
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .brand p {
@@ -327,16 +327,25 @@ input[type=number] {
     padding: 15px;
 }
 
-.brand .brand-tag {
+.brand-tag-container{
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    justify-content: space-around;
+}
+
+.brand-tag {
     background-color: #00ffcc;
     border: none;
     color: #000;
-    padding: 10px 20px;
-    margin: 10px 5px;
-    text-align: center;
+    padding: 10px 10px;
     font-size: 15px;
-    width: 105px;
+    width: 25%;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .flex .tag {
