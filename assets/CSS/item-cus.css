@@ -1,10 +1,17 @@
 body {
-    margin: 0;
+    margin-top: 100px;
     padding: 0;
     background-color: #1a1a1a;
     color: #ffffff;
     font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
+}
+
+#nav-placeholder {
+    z-index: 5;
+    position: fixed;
+    top: 0px;
+    width: 100%;
 }
 
 main {
@@ -470,34 +477,3 @@ input[type=number] {
         width: 90%;
     }
 }
-
-/* @media screen and (max-width: 375px) {
-    .product-image img {
-        width: 100px;
-        margin: 15px;
-    }
-
-    .product-details h1 {
-        font-size: 24px;
-    }
-
-    .product-details .price {
-        font-size: 16px;
-    }
-
-    .product-details .buy-now {
-        padding: 8px 16px;
-    }
-
-    .config-img img {
-        width: 200px;
-    }
-
-    .config-item {
-        height: 35px;
-    }
-
-    .buy {
-        justify-content: center;
-    }
-} */
