@@ -15,10 +15,11 @@ body {
 }
 
 main {
-    width: 1080px;
+    width: auto;
     padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
     border-radius: 30px;
     background-color: #F8F8F8;
     color: #000;
@@ -26,6 +27,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .flex {
@@ -168,6 +170,17 @@ input::-webkit-inner-spin-button {
     transition: border 0.5s ease;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .cpu {
     top: 20%;
     left: 42%;
@@ -232,21 +245,34 @@ input::-webkit-inner-spin-button {
     width: 44px;
 }
 
-.reviews {
-    width: 40%;
+.below {
+    width: 95%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .reviews, .brand {
-    margin: 10px;
+    width: 40%;
+    margin-bottom: 40px;
 }
 
-.reviews iframe {
-    width: 400px;
+.reviews {
+    position: relative;
+}
+
+.reviews-container{
+    width: 100%;
+}
+
+.reviews-container iframe {
+    width: 100%;
     height: 350px;
     border: none;
 }
 
-.reviews, .brand, .other-items {
+.other-items {
     margin-bottom: 40px;
 }
 
@@ -254,19 +280,11 @@ input::-webkit-inner-spin-button {
     font-size: 24px;
 }
 
-.review {
-    background-color: #eaeaea;
-    width: 300px;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.review p {
-    margin: 5px 0;
-}
-
 .brand {
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .brand p {
@@ -275,16 +293,25 @@ input::-webkit-inner-spin-button {
     padding: 15px;
 }
 
-.brand .brand-tag {
+.brand-tag-container{
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    justify-content: space-around;
+}
+
+.brand-tag {
     background-color: #00ffcc;
     border: none;
     color: #000;
-    padding: 10px 20px;
-    margin: 10px 5px;
-    text-align: center;
+    padding: 10px 10px;
     font-size: 15px;
-    width: 105px;
+    width: 25%;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .flex .tag {
@@ -326,16 +353,8 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
-.below {
-    display: flex;
-    justify-content: center;
-}
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
     main {
-        width: 100%;
-        margin: 10px;
-        padding: 10px;
         border-radius: 20px;
     }
 
@@ -369,31 +388,44 @@ input::-webkit-inner-spin-button {
     .conf-number {
         margin-left: 0;
         margin-top: 20px;
-    }
-
-    .reviews, .brand {
-        width: 100%;
-    }
-
-    .other-items {
-        flex-direction: column;
-    }
-
-    .other-item {
-        margin: 10px 0;
-        width: 100%;
-    }
-
-    .brand {
-        width: 300px;
-    }
-
-    .below {
-        flex-direction: column;
+        width: 280px;
     }
 
     .config-item {
         width: 100%;
+    }
+
+    .below {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reviews, .brand {
+        width: 80%;
+    }
+
+    .reviews h2, .brand h2{
+        text-align: center;
+        margin: 10px;
+    }
+
+    .reviews-container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .other-items {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .other-item {
+        margin: 10px 0;
+        width: 90%;
     }
 }
 
