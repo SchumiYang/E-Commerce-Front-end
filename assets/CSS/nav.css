@@ -45,8 +45,9 @@ header a:active {
     text-decoration: none;
 }
 
-.logo, .small-logo{
-    padding:10px;
+.logo,
+.small-logo {
+    padding: 10px;
     height: 60px;
 }
 
@@ -81,7 +82,7 @@ header div {
 .search-bar:hover input::placeholder {
     color: #017e75;
     opacity: 0.8;
-    transition:  all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 header .dropdown-menu {
@@ -138,7 +139,7 @@ header .profile .hidden {
     display: block;
 }
 
-.mega-menu{
+.mega-menu {
     visibility: hidden;
     display: none;
 }
@@ -167,25 +168,25 @@ header .profile .hidden {
         justify-content: space-between;
     }
 
-    header div{
+    header div {
         line-height: 0px;
     }
 
-    .small-logo{
+    .small-logo {
         display: none;
     }
 
-    .line-height80{
+    .line-height80 {
         line-height: 80px;
     }
 
-    .profile-icon-container{
+    .profile-icon-container {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .profile-icon{
+    .profile-icon {
         height: 50px;
         width: 50px;
     }
@@ -201,7 +202,7 @@ header .profile .hidden {
         width: 50px;
         cursor: pointer;
     }
-    
+
     .mega-menu {
         z-index: 2;
         visibility: visible;
@@ -222,7 +223,7 @@ header .profile .hidden {
         color: white;
     }
 
-    
+
     .mega-menu ul li:hover {
         background-color: #494949;
     }
@@ -234,36 +235,36 @@ header .profile .hidden {
 }
 
 @media screen and (max-width:590px) {
-    header{
-        height:60px;
+    header {
+        height: 60px;
     }
 
-    .profile-icon-container{
+    .profile-icon-container {
         display: none;
     }
 
-    .small-logo{
+    .small-logo {
         display: block;
         height: 50px;
         width: 50px;
         padding: 5px;
     }
 
-    .small-logo img{
+    .small-logo img {
         height: 50px;
         width: 50px;
     }
 
-    .logo{
+    .logo {
         display: none;
     }
 
-    .search-bar input{
+    .search-bar input {
         font-size: 16px;
         padding: 6px;
     }
 
-    .menu{
+    .menu {
         height: 60px;
     }
 
@@ -278,7 +279,7 @@ header .profile .hidden {
         width: 40px;
     }
 
-    .line-height80{
+    .line-height80 {
         line-height: 60px;
     }
 
