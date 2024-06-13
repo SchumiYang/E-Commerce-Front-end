@@ -75,11 +75,12 @@ header div {
 }
 
 .search-bar input::placeholder {
-    color: #017e75;
+    color: #00ffcc;
 }
 
 .search-bar:hover input::placeholder {
-    color: #00ffcc;
+    color: #017e75;
+    opacity: 0.8;
     transition:  all 0.3s ease-in-out;
 }
 
