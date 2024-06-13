@@ -374,9 +374,6 @@ textarea {
     transition: all 0.3s ease-in-out;
 }
 
-footer{
-    height: 80px;  
-}
 
 .footer {
     display: flex;
@@ -387,9 +384,11 @@ footer{
     border: none;
 }
 
-.footer iframe{
-    display: block;
-    height: 800px;
+
+@media screen and (max-width:768px) {
+    .footer{
+        height: 110px;
+    }
 }
 
 @media screen and (max-width:768px) {
