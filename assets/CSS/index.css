@@ -401,11 +401,8 @@ textarea {
         flex-direction: column;
     }
 
-    .form-container {
-        width: 94vw;
-    }
-
     .card {
+        width: 80vw;
         height: auto;
     }
 

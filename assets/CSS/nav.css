@@ -118,6 +118,11 @@ header .dropdown-content a {
     display: block;
 }
 
+header .dropdown-content a:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
 header .dropdown-content a:hover {
     background-color: #494949;
 }
