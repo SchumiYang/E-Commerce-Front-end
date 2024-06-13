@@ -21,6 +21,7 @@ h1 {
     max-width: max(60vw, 42rem);
     transition: all 1s;
     margin: auto;
+    margin-bottom: 50px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-top: min(5%,80px);
     min-height: 70vh
@@ -388,6 +389,8 @@ input:focus {
     overflow: hidden;
     border: none;
     bottom: 0;
+    position: static;
+    bottom: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -439,5 +442,6 @@ input:focus {
 
     .footer {
         height: 150px;
+        position: static;
     }
 }

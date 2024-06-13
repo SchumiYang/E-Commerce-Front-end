@@ -114,6 +114,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .product img {
@@ -281,7 +282,6 @@ main {
         display: none;
     }
 }
-
 
 @media screen and (max-width:768px) {
     .footer {
