@@ -196,12 +196,12 @@ main {
 }
 
 .product-button button {
-    background-color: #00ffcc;
-    border: 1px solid #00ffcc;
-    border-radius: 10px;
+    background-color: #00ffcc;  
+    border: 0 ;
+    border-radius: 24px;
     color: #3e3e3e;
     width: 150px;
-    height: 50px;
+    height: 40px;
     font-size: 20px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -210,7 +210,6 @@ main {
 
 .product-button button:hover {
     background-color: #017e75;
-    border: 1px solid #017e75;
     color: #fff;
     font-weight: bold;
     scale: 1.05;
@@ -233,7 +232,7 @@ main {
     display: flex;
     flex-direction: column;
     width: max(90vw, 50%);
-    height: 500px;
+    height: 30rem;
     color: white;
     justify-content: space-between;
     border-radius: 15px;
@@ -259,14 +258,15 @@ main {
 }
 
 .card-content {
-    padding: 10px;
+    max-width: 46rem;
+    padding: 32px;
     margin-left: auto;
     margin-right: auto;
+    font-size: large;
 }
 
 .card-content img {
-    width: 200px;
-    margin-top: 30px;
+    width: 180px;
     opacity: 0.9;
 }
 
@@ -399,6 +399,14 @@ textarea {
     .card-container {
         display: flex;
         flex-direction: column;
+    }
+
+    .form-container {
+        width: 94vw;
+    }
+
+    .card {
+        height: auto;
     }
 
     .slider {

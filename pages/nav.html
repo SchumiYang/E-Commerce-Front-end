@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/E-Commerce-Front-end/assets/CSS/nav.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/9b3624985e.js" crossorigin="anonymous"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
         rel="stylesheet">
@@ -15,7 +16,8 @@
 
 <body class="nav">
     <header class="desktop">
-        <div class="logo"><a href="/E-Commerce-Front-end/index.html"><img src="/E-Commerce-Front-end/assets/img/logo.webp"></a></div>
+        <div class="logo"><a href="/E-Commerce-Front-end/index.html"><img
+                    src="/E-Commerce-Front-end/assets/img/logo.webp"></a></div>
         <div></div>
         <div><a href="/E-Commerce-Front-end/index.html">Home</a></div>
         <div><a href="/E-Commerce-Front-end/pages/aboutus.html">About Us</a></div>
@@ -40,66 +42,53 @@
         </div>
         <!-- <div><a href="/E-Commerce-Front-end/pages/faq.html">FAQ</a></div> -->
         <div><a href="/E-Commerce-Front-end/pages/location.html">Location</a></div>
-        <div><a href="/E-Commerce-Front-end/pages/cart.html">Cart</a></div>
         <div class="search-bar">
             <form action="search.jsp">
-                <input type="search" id="search" name="search" placeholder="Looking for...?"/>
-                <input type="submit" hidden/>
+                <input type="search" id="search" name="search" placeholder="Looking for...?" />
+                <input type="submit" hidden />
             </form>
         </div>
-        
-        <div></div>
+
+        <div><a href="/E-Commerce-Front-end/pages/cart.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
+        </div>
         <div class="profile">
-            <div class="hidden">
-                <a href="/E-Commerce-Front-end/pages/profile.html">
-                    <p>Profile</p>
-                </a>
+            <div><a href="/E-Commerce-Front-end/pages/profile.html"><i class="fa-solid fa-circle-user fa-xl"></i></a>
             </div>
-            <div><a href="/E-Commerce-Front-end/pages/profile.html"><img
-                        src="/E-Commerce-Front-end/assets/img/profile.webp"></a></div>
         </div>
     </header>
 
     <header class="mobile">
-        <div class="logo"><a href="/E-Commerce-Front-end/index.html"><img src="/E-Commerce-Front-end/assets/img/logo.webp"></a></div>
-        <div class="small-logo"><a href="/E-Commerce-Front-end/index.html"><img src="/E-Commerce-Front-end/assets/img/small-logo.webp"></a></div>
+        <div class="logo"><a href="/E-Commerce-Front-end/index.html"><img
+                    src="/E-Commerce-Front-end/assets/img/logo.webp"></a></div>
+        <div class="small-logo"><a href="/E-Commerce-Front-end/index.html"><img
+                    src="/E-Commerce-Front-end/assets/img/small-logo.webp"></a></div>
         <div class="search-bar line-height80">
             <form action="search.jsp">
-                <input type="search" id="search" name="search" placeholder="looking for...?"/>
-                <input type="submit" hidden/>
+                <input type="search" id="search" name="search" placeholder="Looking for...?" />
+                <input type="submit" hidden />
             </form>
         </div>
         <div class="profile">
-            <div class="line-height80">
-                <a href="/E-Commerce-Front-end/pages/profile.html">Profile</a>
+            <div class="profile-icon">
+                <a href="/E-Commerce-Front-end/pages/cart.html"><i
+                        class="fa-solid fa-cart-shopping fa-lg line-height80"></i></a>
             </div>
-            <div class="profile-icon-container">
-                <div class="profile-icon">
-                    <a href="/E-Commerce-Front-end/pages/profile.html">
-                        <img src="/E-Commerce-Front-end/assets/img/profile.webp">
-                    </a>
-                </div>
+            <div class="profile-icon">
+                <a href="/E-Commerce-Front-end/pages/profile.html"><i
+                        class="fa-solid fa-circle-user fa-xl line-height80"></i></a>
             </div>
-            <div class="menu">
-                <div class="menu-dropdown" onclick="toggleMenu()">
-                    <img src="/E-Commerce-Front-end/assets/img/menu1.webp">
-                </div>
+            <div class="profile-icon">
+                <i class="fa-solid fa-bars line-height80 fa-xl" onclick="toggleMenu()"></i>
             </div>
         </div>
     </header>
 
     <div class="mega-menu" style="display: none;">
         <ul>
-            <li onclick="location.href='/E-Commerce-Front-end/index.html';">Home</li>
             <li onclick="location.href='/E-Commerce-Front-end/pages/aboutus.html';">About Us</li>
-            <li onclick="location.href='/E-Commerce-Front-end/pages/cart.html';">Cart</li>
-            <li onclick="location.href='/E-Commerce-Front-end/pages/product.html';">App Base</a>
-            <li onclick="location.href='/E-Commerce-Front-end/pages/product.html';">Website</a>
-            <li onclick="location.href='/E-Commerce-Front-end/pages/product.html';">Database</a>
-            <li onclick="location.href='/E-Commerce-Front-end/pages/product.html';">Customized</a>
-            <li onclick="location.href='/E-Commerce-Front-end/pages/product.html';">See All</a>
             <li onclick="location.href='/E-Commerce-Front-end/pages/location.html';">Location</li>
-            <!-- Add more menu items as needed -->
+            <li onclick="location.href='/E-Commerce-Front-end/pages/product.html';">Products</a>
+                <!-- Add more menu items as needed -->
         </ul>
     </div>
 

@@ -180,13 +180,9 @@ header .profile .hidden {
         line-height: 80px;
     }
 
-    .profile-icon-container {
+    .profile-icon {
         display: flex;
         justify-content: center;
-        align-items: center;
-    }
-
-    .profile-icon {
         height: 50px;
         width: 50px;
     }
@@ -204,6 +200,8 @@ header .profile .hidden {
     }
 
     .mega-menu {
+        width: 35%;
+        float: right;
         z-index: 2;
         visibility: visible;
     }
@@ -211,6 +209,7 @@ header .profile .hidden {
     .mega-menu ul {
         background-color: #3e3e3e;
         list-style-type: none;
+        border-bottom-left-radius: 16px;
     }
 
     .mega-menu ul li {
@@ -223,24 +222,15 @@ header .profile .hidden {
         color: white;
     }
 
-
     .mega-menu ul li:hover {
         background-color: #494949;
     }
 
-
-    header .profile .hidden {
-        display: none;
-    }
 }
 
 @media screen and (max-width:590px) {
     header {
         height: 60px;
-    }
-
-    .profile-icon-container {
-        display: none;
     }
 
     .small-logo {
@@ -262,21 +252,6 @@ header .profile .hidden {
     .search-bar input {
         font-size: 16px;
         padding: 6px;
-    }
-
-    .menu {
-        height: 60px;
-    }
-
-    .menu .menu-dropdown {
-        height: 40px;
-        width: 40px;
-        cursor: pointer;
-    }
-
-    .menu .menu-dropdown img {
-        height: 40px;
-        width: 40px;
     }
 
     .line-height80 {
