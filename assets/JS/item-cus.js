@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 let value = parseInt(input.value);
                 if (value - step >= input.min) {
                     input.value = (value - step);
-                    sub.disabled = true;
+                    // sub.disabled = true;
+                    getprice();
                 } else {
                     alert("At least " + input.min);
                 }
@@ -48,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 let value = parseInt(input.value);
                 if (value + step <= input.max) {
                     input.value = (value + step);
-                    sub.disabled = true;
+                    // sub.disabled = true;
+                    getprice();
                 } else {
                     alert("Maximum " + input.max);
                 }
@@ -58,7 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 let value = parseInt(input.value);
                 if (value > input.min) {
                     input.value = (value /= 2);
-                    sub.disabled = true;
+                    // sub.disabled = true;
+                    getprice();
                 } else {
                     alert("At least " + input.min);
                 }
@@ -68,7 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 let value = parseInt(input.value);
                 if (value < input.max) {
                     input.value = (value *= 2);
-                    sub.disabled = true;
+                    // sub.disabled = true;
+                    getprice();
                 } else {
                     alert("Maximum " + input.max);
                 }
@@ -91,5 +95,5 @@ function getprice() {
     var total = (cpunum + gpunum + ramnum ) * price + memnum * memPrice + bwnum;
 
     document.getElementById('price').value = total;
-    sub.disabled = false;
+    // sub.disabled = false;
 }

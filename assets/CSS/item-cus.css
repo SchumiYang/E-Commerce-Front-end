@@ -121,14 +121,16 @@ input::-webkit-inner-spin-button {
 
 .buy-now {
     width: 200px;
+    height: 44px;
     background-color: #bababa;
     border: none;
     color: #000;
-    padding: 10px 20px;
+    padding: 0;
     margin: 10px 0px;
     cursor: pointer;
     border-radius: 5px;
     font-size: 15px;
+    text-align: center;
 }
 
 .buy-now:hover {
@@ -137,7 +139,7 @@ input::-webkit-inner-spin-button {
     transition: all 0.5s ease-in-out;
 }
 
-.minus, .plus, .buy-now {
+.minus, .plus {
     margin: 10px 0px;
     height: 30px;
 }
@@ -375,7 +377,7 @@ input[type=number] {
 .other-item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background-color: #eaeaea;
     padding: 20px;
@@ -388,18 +390,17 @@ input[type=number] {
 
 .other-item a {
     background-color: #00ffcc;
-    border: none;
+    border-radius: 5px;
     color: #000;
     padding: 10px 20px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
 .other-item a:hover {
-    background-color: #00e1ca;
-    border: none;
-    color: #000;
-    padding: 10px 20px;
-    cursor: pointer;
+    background-color: #017e75;
+    font-weight: bold;
+    color: white;
 }
 
 @media screen and (max-width: 1200px) {
@@ -453,7 +454,7 @@ input[type=number] {
     }
 
     .reviews, .brand {
-        width: 80%;
+        width: 100%;
     }
 
     .reviews h2, .brand h2{
@@ -461,13 +462,13 @@ input[type=number] {
         margin: 10px;
     }
 
-    .t {
-        margin: 0px 15px;
-    }
-
     .reviews-container{
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
+    }
+
+    .brand-tag {
+        margin: 0 3px;
     }
 
     .reviews-container iframe {
