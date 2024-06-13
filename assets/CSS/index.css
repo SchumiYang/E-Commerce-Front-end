@@ -4,7 +4,7 @@
 }
 
 body {
-    margin-top: 80px;
+    margin-top: min(5%,80px);
     background-color: white;
     color: black;
     font-family: "Noto Sans", sans-serif;

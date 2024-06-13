@@ -4,7 +4,7 @@
 }
 
 body{
-    margin-top: 100px;
+    margin-top: min(5%,100px);
     background-color: #2D2D2D;
     font-family: "Noto Sans TC", sans-serif;
     font-optical-sizing: auto;
