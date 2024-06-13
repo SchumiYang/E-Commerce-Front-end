@@ -1,0 +1,66 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    font-family: "Noto Sans", sans-serif;
+    background-color: #333;
+    color: #00ccbe;
+    padding-top: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.footer-container > div {
+    flex: 1;
+    text-align: center;
+}
+
+.sponsor {
+    display: flex;
+    justify-content: center;
+}
+
+.sponsor svg {
+    width: 25px;
+    height: auto;
+    fill: #00ccbe;
+    margin-right: 3px;
+}
+
+.sponsor a {
+    color: #00ccbe;
+    text-decoration: none;
+}
+
+.sponsor:hover a, .sponsor:hover svg {
+    transition: all 0.3s ease-in-out;
+    color: #0fc;
+    fill: #0fc;
+    scale: 1.03;
+}
+
+.visitor-counter {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 800px) {
+    .footer-container {
+        flex-direction: column;
+    }
+    .footer-container > div {
+        margin: 10px 0;
+    }
+}
