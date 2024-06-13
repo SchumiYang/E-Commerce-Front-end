@@ -127,19 +127,9 @@ header .profile {
     gap: 10px;
 }
 
-header .profile img {
-    height: 50px;
-    width: 50px;
-    justify-content: center;
-    align-items: center;
-    vertical-align: middle;
-}
-
-header .profile .hidden {
-    display: block;
-}
-
 .mega-menu {
+    position: absolute;
+    right: 0px;
     visibility: hidden;
     display: none;
 }
@@ -201,7 +191,6 @@ header .profile .hidden {
 
     .mega-menu {
         width: 35%;
-        float: right;
         z-index: 2;
         visibility: visible;
     }

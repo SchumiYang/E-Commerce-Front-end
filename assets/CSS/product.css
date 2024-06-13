@@ -8,7 +8,7 @@ body {
     font-family: "Noto Sans", sans-serif;
     margin-top: 90px;
     padding: 0;
-    background-color: #1a1a1a;
+    background-color: #2D2D2D;
     color: #ffffff;
 }
 
@@ -39,7 +39,7 @@ main {
 .product {
     height: 16rem;
     border-radius: 30px;
-    background-color: #D9D9D9;
+    background-color: #e6e6e6;
 }
 
 .productGrid {
@@ -124,6 +124,7 @@ main {
 }
 
 .product-desc {
+    z-index: 2;
     height: 200px;
     display: flex;
     flex-direction: column;
@@ -278,7 +279,7 @@ main {
         border-radius: 0;
     }
 
-    .cart-image {
+    .cart-image::before {
         display: none;
     }
 }
