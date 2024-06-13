@@ -77,6 +77,11 @@ header div {
     color: #017e75;
 }
 
+.search-bar:hover input::placeholder {
+    color: #00ffcc;
+    transition:  all 0.3s ease-in-out;
+}
+
 header .dropdown-menu {
     display: inline-block;
     position: relative;
