@@ -63,7 +63,7 @@ main {
     border-radius: 0px 30px 30px 0px;
 }
 
-form {
+.input-form {
     display: flex;
     flex-direction: column;
 }
@@ -73,7 +73,7 @@ label {
     font-size: 14px;
 }
 
-input {
+#username, #password {
     margin-bottom: 20px;
     padding: 10px;
     font-size: 14px;
