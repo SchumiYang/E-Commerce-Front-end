@@ -64,9 +64,17 @@ header div {
     height: 80px;
 }
 
-.search-bar input{
+.search-bar input {
+    height: 50px;
+    background-color: #222222;
+    color: #a8a8a8;
     font-size: 16px;
     padding: 10px;
+    border: none;
+}
+
+.search-bar input::placeholder {
+    color: #017e75;
 }
 
 header .dropdown-menu {
