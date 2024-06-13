@@ -248,6 +248,15 @@ body {
     }
 }
 
+.footer {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    overflow: hidden;
+    border: none;
+}
+
 @media screen and (max-width: 768px) {
     .cart-container {
         font-size: 18px;
@@ -316,5 +325,9 @@ body {
     .checkout {
         width: 100%;
         justify-content: center;
+    }
+
+    .footer {
+        height: 150px;
     }
 }
