@@ -385,9 +385,9 @@ textarea {
 }
 
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:800px) {
     .footer{
-        height: 110px;
+        height: 150px;
     }
 }
 
