@@ -20,11 +20,12 @@
 				out.println("連線建立失敗");
 			}
 			else{		
-				String sql = "INSERT INTO `members` (`id`, `username`, `pwd`, `email`, `address`) " +
-							 "VALUES (NULL, '"+username+"', '"+password+"', '"+email+"', '"+address+"')";
+				String sql = "INSERT INTO `members` (`username`, `pwd`, `email`, `address`) " +
+							 "VALUES ('"+username+"', '"+password+"', '"+email+"', '"+address+"')";
 				int no=con.createStatement().executeUpdate(sql); 
-				if (no>0)
+				if (no>0){
 					out.println("<script>alert('註冊成功!');location.href='login.html'</script>");
+				}
 				con.close();
             }
 		}      

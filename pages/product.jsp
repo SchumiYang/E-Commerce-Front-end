@@ -73,14 +73,14 @@
             <div class="product-desc">
                 <h1>Can't find the one you need?</h1>
                 <p class="desc">Try the Customization service to get your Perfect VPS Program</p>
-                <div class="buy-button" onclick="location.href='../pages/item-cus.html';">
+                <div class="buy-button" onclick="location.href='../pages/item-cus.jsp';">
                     <div class="buy-text">Start Now</div>
                 </div>
             </div>
         </div>
     </main>
     <footer>
-        <iframe src="/E-Commerce-Front-end/pages/footer.html" class="footer"></iframe>
+        <iframe src="/E-Commerce-Front-end/pages/footer.jsp" class="footer"></iframe>
     </footer>
 </body>
 

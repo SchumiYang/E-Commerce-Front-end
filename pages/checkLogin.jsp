@@ -19,20 +19,20 @@
 			
 	        if(con.isClosed()){
                 out.println("連線建立失敗");
-			}
-			
-            else{	
+			} else {	
 				String sql = "SELECT * FROM `members` WHERE `username`=? AND `pwd`=?";
 				PreparedStatement pstmt = null;
 				pstmt=con.prepareStatement(sql);
 				pstmt.setString(1,username);
 				pstmt.setString(2,password);
-			
+				String userId = null;
+
 				ResultSet dataset = pstmt.executeQuery();
 				if(dataset.next()){
 					Cookie usernameCookie = new Cookie("username",username);
 					Cookie nameCookie = new Cookie("username",dataset.getString("username"));
-					Cookie idCookie = new Cookie("id",dataset.getString("id"));
+					userId = dataset.getString("id");
+					Cookie idCookie = new Cookie("id",userId);
 					usernameCookie.setMaxAge(-1);
 					usernameCookie.setPath("/");
 					nameCookie.setMaxAge(-1);
@@ -43,19 +43,33 @@
 					response.addCookie(nameCookie);
 					response.addCookie(idCookie);
 
-					con.close();//結束資料庫連結
 					out.print(redirectUrl);
-					response.sendRedirect(redirectUrl);
-				}
-				
-				else{
-					con.close();//結束資料庫連結
+				} else{
 					out.print(redirectUrl);
 					response.sendRedirect("login.jsp?&message=Username or password incorrect, please try again.");	
+					return;
 				}
+				sql = "SELECT COUNT(*) FROM `cart` WHERE userId = ?;";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1,Integer.parseInt(userId));
+				dataset = pstmt.executeQuery();
+				dataset.next();
+				if (dataset.getInt(1) == 0){
+					sql ="INSERT IGNORE into `cart` (`userId`) VALUES ('"+userId+"')";
+					con.createStatement().executeUpdate(sql);
+				}
+				sql = "SELECT id FROM `cart` WHERE `userId` = ?;";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1,Integer.parseInt(userId));
+				dataset = pstmt.executeQuery();
+
+				dataset.next();
+				Cookie cartCookie = new Cookie("cartid",String.valueOf(dataset.getInt(1)));
+				response.addCookie(cartCookie);
+
+				response.sendRedirect(redirectUrl);
 			}
-		}        
-		catch (SQLException sExec) {
+		} catch (SQLException sExec) {
 			out.print(sExec);
 		}  
 

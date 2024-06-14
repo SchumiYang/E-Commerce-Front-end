@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
-    <link rel="stylesheet" href="../assets//CSS/cart.css">
+    <link rel="stylesheet" href="../assets//CSS/cart.css?time=<%=System.currentTimeMillis()%>">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/9b3624985e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <%@ include file="config.jsp" %>
     <div id="nav-placeholder">
-
     </div>
 
     <script>
@@ -20,6 +19,29 @@
             $("#nav-placeholder").load("nav.html");
         });
     </script>
+
+    <%
+        String id = Stream.of(request.getCookies()).filter(c->c.getName().equals("id")).map(c->c.getValue()).findFirst().orElse(null);
+        if(id==null)
+            return;
+        String action = request.getParameter("action");
+        if (action != null){
+            switch(action){
+                case "add":
+                    sql = "UPDATE `cartdetails` SET `quantity` = "+ (Integer.parseInt(request.getParameter("quantity")) + 1)+" WHERE `id` = "+request.getParameter("detailId")+" ;";
+                    break;
+                case "sub":
+                    int quantity = Integer.parseInt(request.getParameter("quantity"));
+                    sql = (quantity - 1 == 0 ? "DELETE FROM `cartdetails` WHERE `id` = "+request.getParameter("detailId")+" ;" : "UPDATE `cartdetails` SET `quantity` = "+ (quantity - 1)+" WHERE `id` = "+request.getParameter("detailId")+" ;");
+                    break;
+                case "delete":
+                    sql = "DELETE FROM `cartdetails` WHERE `id` = "+request.getParameter("detailId")+" ;";
+                    break;
+            }
+            pstmt=con.prepareStatement(sql);
+            pstmt.executeUpdate();
+        }
+    %>
 
     <main>
         <div class="cart-container">
@@ -30,62 +52,65 @@
                 <div>Subtotal</div>
                 <div></div>
             </div>
+            <%
+                sql = "SELECT `cd`.productId, `cd`.quantity, `cd`.customized, `cd`.id FROM `cart` AS `c` INNER JOIN `cartdetails` AS `cd` ON `c`.`id` = `cd`.`cartId` WHERE `c`.`userId` = ? ORDER BY `c`.`timestamp` DESC;";
+                pstmt=con.prepareStatement(sql);
+                pstmt.setInt(1,Integer.parseInt(id));
+                int total = 0;
+                ResultSet dataset = pstmt.executeQuery();
+                while(dataset.next()){
+                    int productId = dataset.getInt(1);
+                    int q = dataset.getInt(2);
+                    int customized = dataset.getInt(3);
+                    int detailId = dataset.getInt(4);
+                    String sql2 = "SELECT * FROM `"+(customized == 1 ?"cus_product" : "products")+"` WHERE `id` = ?;";
+                    pstmt=con.prepareStatement(sql2);
+                    pstmt.setInt(1,productId);
+                    ResultSet dataset2 = pstmt.executeQuery();
+                    dataset2.next();
+                    int price = dataset2.getInt(5);
+
+            %>
             <div class="cart-item">
                 <div class="product">
-                    <img src="../assets/img/cpu.webp" alt="Product Image" />
+                    <img src="../assets/img/product/<%=(customized != 1 ? productId + ".svg" : "equa.webp")%>" alt="Product Image" />
                     <div class="detail">
-                        <span>AI Based</span>
-                        <span class="spec">vCPU: 6c<br>vGPU: 3G<br>RAM: 64G<br>Mem. 128G<br>Bandwidth 1G</span>
+                        <span><%=dataset2.getString(2)%></span>
+                        <span class="spec">vCPU: <%=dataset2.getInt(6)%>c<br>vGPU: <%=dataset2.getInt(7)%>G<br>RAM: <%=dataset2.getInt(8)%>G<br>Mem. <%=dataset2.getInt(9)%>G<br>Bandwidth <%=dataset2.getInt(10)%>G</span>
                     </div>
                 </div>
-                <div>NT$ 250</div>
+                <div>NT$ <%=price%></div>
                 <div class="quantity-control">
-                    <form method="post" action="minus.jsp">
-                        <input type="hidden" name="product" value="product_id">
+                    <form method="post" action="cart.jsp">
+                        <input type="hidden" name="action" value="sub">
+                        <input type="hidden" name="product" value="<%=productId%>">
+                        <input type="hidden" name="quantity" value="<%=q%>">
+                        <input type="hidden" name="detailId" value="<%=detailId%>">
                         <input type="submit" value="-">
                     </form>
-                    <span>4</span>
-                    <form method="post" action="add.jsp">
-                        <input type="hidden" name="product" value="product_id">
+                    <span><%=q%></span>
+                    <form method="post" action="cart.jsp">
+                        <input type="hidden" name="action" value="add">
+                        <input type="hidden" name="product" value="<%=productId%>">
+                        <input type="hidden" name="quantity" value="<%=q%>">
+                        <input type="hidden" name="detailId" value="<%=detailId%>">
                         <input type="submit" value="+">
                     </form>
                 </div>
-                <div>NT$ 1000</div>
+                <div>NT$ <%=q*price%></div>
                 <div>
-                    <form id="delete1" method="post" action="delete.jsp">
-                        <input type="hidden" name="product" value="product_id">
-                        <i class="fa-solid fa-trash delete" onclick="$('#delete1').submit();"></i>
+                    <form id="delete<%=detailId%>" method="post" action="cart.jsp">
+                        <input type="hidden" name="action" value="delete">
+                        <input type="hidden" name="product" value="<%=productId%>">
+                        <input type="hidden" name="detailId" value="<%=detailId%>">
+                        <i class="fa-solid fa-trash delete" onclick="$('#delete<%=detailId%>').submit();"></i>
                     </form>
                 </div>
             </div>
-            <div class="cart-item">
-                <div class="product">
-                    <img src="../assets/img/cpu.webp" alt="Product Image" />
-                    <div class="detail">
-                        <span>AI Based</span>
-                        <span class="spec">vCPU: 6c<br>vGPU: 3G<br>RAM: 64G<br>Mem. 128G<br>Bandwidth 1G</span>
-                    </div>
-                </div>
-                <div>NT$ 250</div>
-                <div class="quantity-control">
-                    <form method="post" action="minus.jsp">
-                        <input type="hidden" name="product" value="product_id">
-                        <input type="submit" value="-">
-                    </form>
-                    <span>2</span>
-                    <form method="post" action="add.jsp">
-                        <input type="hidden" name="product" value="product_id">
-                        <input type="submit" value="+">
-                    </form>
-                </div>
-                <div>NT$ 500</div>
-                <div>
-                    <form id="delete2" method="post" action="delete.jsp">
-                        <input type="hidden" name="product" value="product_id">
-                        <i class="fa-solid fa-trash delete" onclick="$('#delete2').submit();"></i>
-                    </form>
-                </div>
-            </div>
+            <%
+                total += q*price;
+                }
+            %>
         </div>
         <div class="hrcontainer">
             <span class="line">
@@ -94,7 +119,7 @@
         <div class="total">
             <div class="total-item">
                 <p>Total: </p>
-                <p>NT$ 1500</p>
+                <p>NT$ <%=total%></p>
             </div>
         </div>
         <br>
@@ -169,7 +194,7 @@
         </script>
     </main>
     <footer>
-        <iframe src="/E-Commerce-Front-end/pages/footer.html" class="footer"></iframe>
+        <iframe src="/E-Commerce-Front-end/pages/footer.jsp" class="footer"></iframe>
     </footer>
 </body>
 

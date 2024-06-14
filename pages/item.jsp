@@ -22,14 +22,24 @@
     $("#nav-placeholder").load("nav.html");
     });
     </script>
-
+    <%
+        String id = request.getParameter("product");
+        String action = request.getParameter("action");
+        if(action != null && action.equals("add-cart")){
+            String cartId = Stream.of(request.getCookies()).filter(c->c.getName().equals("cartid")).map(c->c.getValue()).findFirst().orElse(null);
+            if(cartId==null)
+                return;
+            sql="INSERT IGNORE INTO `cartdetails` (`cartId`,`productId`,`customized`, `quantity`) ";
+            sql+="VALUES ('"+cartId+"','"+id+"','0','"+request.getParameter("amount")+"');";      
+            con.createStatement().executeUpdate(sql);
+            out.println("<script>alert('Product added to cart!');</script>");
+        }
+    %>
     <main>
         <%
-            String id = request.getParameter("product");
             sql = "SELECT * FROM `products` WHERE `id` = ?;";
             pstmt=con.prepareStatement(sql);
             pstmt.setInt(1,Integer.parseInt(id));
-            // }
             
             
             ResultSet dataset = pstmt.executeQuery();
@@ -50,7 +60,9 @@
                     <p class="price">$<%=dataset.getInt(5)%></p>
                     <p class="per-mo">/ Per month</p>
                 </div>
-                <form method="post" action="add-cart.jsp">
+                <form method="post" action="item.jsp">
+                    <input type="hidden" name="product" value="<%=id%>">
+                    <input type="hidden" name="action" value="add-cart">
                     <div class="quantity-container">
                         <div class="quantity">
                             <input type="button" class="minus" value="-">

@@ -1,6 +1,7 @@
-<%@page contentType="text/html"%> 
+<%@page contentType="text/html; charset=UTF-8"%> 
 <%@page pageEncoding="UTF-8"%>
 <%@page import = "java.sql.*"%> 
+<%@page import="java.util.stream.Stream"%>
 <%
     request.setCharacterEncoding("UTF-8");
     String user = "root";
