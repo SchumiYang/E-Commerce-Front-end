@@ -7,6 +7,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/9b3624985e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/CSS/product.css">
+    <link rel="stylesheet" href="../assets/CSS/general.css">
+    <script src="../assets/JS/modal.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <title>Product</title>
@@ -15,12 +17,12 @@
 <body>
     <!--Navigation bar-->
     <div id="nav-placeholder">
-
     </div>
-
+    <div id="profile-placeholder"></div>
     <script>
         $(function () {
             $("#nav-placeholder").load("nav.html");
+            $("#profile-placeholder").load("profile.html");
         });
 
     </script>
@@ -29,7 +31,7 @@
         <div class="ad"><img src="../assets/img/ads/ad1.webp"></div>
         <div class="product productGrid">
             <div class="img-container">
-                <img src="../assets/img/cart.webp">
+                <img src="../assets/img/product/1.svg" >
             </div>
             <div class="product-desc">
                 <p class="title">APP Based</p>
@@ -47,7 +49,7 @@
 
         <div class="product productGrid">
             <div class="img-container">
-                <img src="../assets/img/cart.webp">
+                <img src="../assets/img/product/2.svg" >
             </div>
             <div class="product-desc">
                 <p class="title">APP Pro</p>
@@ -65,7 +67,7 @@
 
         <div class="product productGrid">
             <div class="img-container">
-                <img src="../assets/img/cart.webp">
+                <img src="../assets/img/product/3.svg" >
             </div>
             <div class="product-desc">
                 <p class="title">APP Max</p>
