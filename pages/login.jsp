@@ -60,7 +60,7 @@
                     <input type="password" id="password" name="password" required>
                     <button type="submit">Submit</button>
                 </form>
-                <a href="register.html" class="hidden">First Time? Click Here To Register</a>
+                <a href="register.jsp" class="hidden">First Time? Click Here To Register</a>
             </div>
             
         </div>

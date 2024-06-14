@@ -71,7 +71,7 @@
                     <button type="submit">Submit</button>
                     <button type="reset">Reset</button>
                 </form>
-                <a href="login.html" class="hidden">Already Have An Account? Click Here</a>
+                <a href="login.jsp" class="hidden">Already Have An Account? Click Here</a>
             </div>
         </div>
     </main>
