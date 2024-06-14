@@ -54,8 +54,8 @@
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, orderId);
             pstmt.setInt(2, dataset.getInt(2));
-            pstmt.setInt(3, dataset.getInt(4));
-            pstmt.setInt(4, dataset.getInt(3));
+            pstmt.setInt(3, dataset.getInt(3));
+            pstmt.setInt(4, dataset.getInt(4));
 			pstmt.executeUpdate();
 
             sql = "DELETE FROM `cartdetails` WHERE `id` = ?;";
