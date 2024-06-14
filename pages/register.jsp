@@ -53,7 +53,7 @@
             <div class="left">
                 <h1>Register</h1>
                 <p>Start Your Shopping Now</p>
-                <a href="login.html">Already Have An Account? Click Here</a>
+                <a href="login.jsp">Already Have An Account? Click Here</a>
             </div>
             <div class="right">
                 <form class="input-form" action="checkRegister.jsp" method="post">

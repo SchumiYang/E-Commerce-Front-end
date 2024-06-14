@@ -50,7 +50,7 @@
             <div class="left">
                 <h1>Login</h1>
                 <p>Get Your Own VPS Server</p>
-                <a href="register.html">First Time? Click Here To Register</a>
+                <a href="register.jsp">First Time? Click Here To Register</a>
             </div>
             <div class="right">
                 <form class="input-form" action="checkLogin.jsp?&redirectUrl=<%=encodedUrl%>" method = "post">
