@@ -18,6 +18,56 @@ USE `members`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `cart`
+--
+
+DROP TABLE IF EXISTS `cart`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cart` (
+  `cartId` int NOT NULL AUTO_INCREMENT,
+  `userId` int NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`cartId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cart`
+--
+
+LOCK TABLES `cart` WRITE;
+/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cart` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cartdetails`
+--
+
+DROP TABLE IF EXISTS `cartdetails`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cartdetails` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cartId` int NOT NULL,
+  `productId` int NOT NULL,
+  `customized` int NOT NULL DEFAULT '0',
+  `quantity` int NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`,`cartId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cartdetails`
+--
+
+LOCK TABLES `cartdetails` WRITE;
+/*!40000 ALTER TABLE `cartdetails` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cartdetails` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `comment`
 --
 
@@ -153,6 +203,7 @@ CREATE TABLE `products` (
   `ram` int NOT NULL,
   `mem` int NOT NULL,
   `bw` int NOT NULL,
+  `customized` int unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -163,7 +214,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'App Base VPS','Build Your APP with Own VPS service',100,500,1,1,1,16,100),(2,'App Pro','Pro Plan for Pro Users',100,800,1,1,2,32,200),(3,'App Max','App Creation, Effortlessly Elegant',100,1200,2,1,4,32,400),(4,'Website Based','Your Own Website Solution',100,650,1,1,1,16,200),(5,'Web Pro','Web Hosting, Simply Powerful',100,950,1,1,2,32,300),(6,'Web Max','The most Flexible web Hosting',100,1050,1,1,4,32,400),(7,'Database VPS','Your Own Cloud Drive Solution',100,750,1,1,1,32,100),(8,'DB Pro','Pro Plan for Pro Users',100,1200,1,1,2,64,200),(9,'DB Max','It\'s Worth Having a Privacy Cloud',100,2000,1,1,4,128,400),(10,'AI VPS ','Build the Personal LLM',100,650,1,2,1,16,100),(11,'AI Pro','Pro Plan for Pro Users',100,1200,2,4,4,16,200),(12,'AI Max','Best Building AI Solution',100,1700,2,4,8,32,400);
+INSERT INTO `products` VALUES (1,'App Base VPS','Build Your APP with Own VPS service',100,500,1,1,1,16,100,0),(2,'App Pro','Pro Plan for Pro Users',100,800,1,1,2,32,200,0),(3,'App Max','App Creation, Effortlessly Elegant',100,1200,2,1,4,32,400,0),(4,'Website Based','Your Own Website Solution',100,650,1,1,1,16,200,0),(5,'Web Pro','Web Hosting, Simply Powerful',100,950,1,1,2,32,300,0),(6,'Web Max','The most Flexible web Hosting',100,1050,1,1,4,32,400,0),(7,'Database VPS','Your Own Cloud Drive Solution',100,750,1,1,1,32,100,0),(8,'DB Pro','Pro Plan for Pro Users',100,1200,1,1,2,64,200,0),(9,'DB Max','It\'s Worth Having a Privacy Cloud',100,2000,1,1,4,128,400,0),(10,'AI VPS ','Build the Personal LLM',100,650,1,2,1,16,100,0),(11,'AI Pro','Pro Plan for Pro Users',100,1200,2,4,4,16,200,0),(12,'AI Max','Best Building AI Solution',100,1700,2,4,8,32,400,0);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -225,4 +276,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-15  4:28:50
+-- Dump completed on 2024-06-15  5:02:17
