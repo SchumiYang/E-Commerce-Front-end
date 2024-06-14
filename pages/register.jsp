@@ -21,7 +21,7 @@
 
     <script>
     $(function(){
-    $("#nav-placeholder").load("nav.html");
+    $("#nav-placeholder").load("nav.jsp");
     });
     </script>
 
@@ -76,7 +76,7 @@
         </div>
     </main>
     <footer>
-        <iframe src="/E-Commerce-Front-end/pages/footer.html" class="footer"></iframe>
+        <iframe src="/E-Commerce-Front-end/pages/footer.jsp" class="footer"></iframe>
     </footer>
 </body>
 </html>

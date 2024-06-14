@@ -92,7 +92,7 @@
                     src="/E-Commerce-Front-end/assets/img/logo.webp"></a></div>
         <div></div>
         <div><a href="/E-Commerce-Front-end/index.jsp">Home</a></div>
-        <div><a href="/E-Commerce-Front-end/pages/aboutus.jsp">About Us</a></div>
+        <div><a href="/E-Commerce-Front-end/pages/aboutus.html">About Us</a></div>
         <div class="dropdown-menu">
             <div class="dropdown-icon-text">
                 <div class="dropdown-text">Product</div>
@@ -167,7 +167,7 @@
 
     <div class="mega-menu" style="display: none;">
         <ul>
-            <li onclick="location.href='/E-Commerce-Front-end/pages/aboutus.jsp';">About Us</li>
+            <li onclick="location.href='/E-Commerce-Front-end/pages/aboutus.html';">About Us</li>
             <li onclick="location.href='/E-Commerce-Front-end/pages/location.jsp';">Location</li>
             <li onclick="location.href='/E-Commerce-Front-end/pages/product.jsp';">Products</a>
                 <!-- Add more menu items as needed -->

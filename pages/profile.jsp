@@ -256,7 +256,7 @@
         </div>
     </div>
     <footer>
-        <iframe src="/E-Commerce-Front-end/pages/footer.html" class="footer"></iframe>
+        <iframe src="/E-Commerce-Front-end/pages/footer.jsp" class="footer"></iframe>
     </footer>
 </body>
 
