@@ -1,16 +1,32 @@
 <!DOCTYPE html>
+<%@ include file="config.jsp" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer</title>
-    <link rel="stylesheet" href="../assets/CSS/footer.css">
+    <link rel="stylesheet" href="../assets/CSS/footer.css?time=<%=System.currentTimeMillis()%>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
         rel="stylesheet">
 </head>
+        <%
+            sql = "SELECT * FROM `visitorcounter`;";
+            pstmt=con.prepareStatement(sql);
+            ResultSet dataset = pstmt.executeQuery();
+            dataset.next();
+            int count = dataset.getInt(1);
+            if (session.isNew()){
+                sql = "UPDATE `visitorcounter` SET `visitorNum` = ?;";
+                pstmt=con.prepareStatement(sql);
+                count++;
+                pstmt.setInt(1,count);
+                pstmt.executeUpdate();
+            }
+            con.close();
+        %>
     <body>
         <div class="footer-container">
             <div class="copyright">
@@ -22,7 +38,7 @@
             </div>
             <div class="visitor-counter">
                 <p>Visitors: </p>
-                <span id="visitor-count">44</span>
+                <span id="visitor-count"><%=count%></span>
             </div>
         </div>
     </body>

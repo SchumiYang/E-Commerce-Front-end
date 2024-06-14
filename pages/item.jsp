@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <%@ include file="config.jsp" %>
     <!--Navigation bar-->
     <div id="nav-placeholder">
 
@@ -23,26 +24,37 @@
     </script>
 
     <main>
+        <%
+            String id = request.getParameter("product");
+            sql = "SELECT * FROM `products` WHERE `id` = ?;";
+            pstmt=con.prepareStatement(sql);
+            pstmt.setInt(1,Integer.parseInt(id));
+            // }
+            
+            
+            ResultSet dataset = pstmt.executeQuery();
+            dataset.next();
+        %>
         <section class="product">
             <div class="product-image">
-                <img src="../assets/img/phone.svg" alt="App Base VPS"></img>
+                <img src="../assets/img/product/<%=dataset.getInt(1)%>.svg" alt="<%=dataset.getString(2)%>"></img>
             </div>
             <div class="product-details">
-                <h1>App Base VPS</h1>
-                <p>Build Your APP with Own VPS service</p>
+                <h1><%=dataset.getString(2)%></h1>
+                <p><%=dataset.getString(3)%></p>
                 <div class="flex">
                     <!-- <p class="specs">with vCPU 1GB, RAM 4GB</p> -->
-                    <p class="instock">| In stock: 100</p>
+                    <p class="instock">| In stock: <%=dataset.getInt(4)%></p>
                 </div>
                 <div class="flex">
-                    <p class="price">$5,000</p>
+                    <p class="price">$<%=dataset.getInt(5)%></p>
                     <p class="per-mo">/ Per month</p>
                 </div>
-                <form method="post" name="">
+                <form method="post" action="add-cart.jsp">
                     <div class="quantity-container">
                         <div class="quantity">
                             <input type="button" class="minus" value="-">
-                            <input type="number" value="1" min="1">
+                            <input type="number"  name="amount" value="1" min="1">
                             <input type="button" class="plus" value="+">
                         </div>
                         <input type="submit" class="buy-now" value="Buy Now">
@@ -63,37 +75,37 @@
             <div class="conf-number">
                 <div class="config-item" data-target="cpu">
                     <label for="vcpu">vCPU</label>
-                    <p>2</p>
+                    <p><%=dataset.getInt(6)%></p>
                     <label class="gb">Cores</label>
                 </div>
                 <div class="config-item" data-target="gpu">
                     <label for="ram">vGPU</label>
-                    <p>4</p>
+                    <p><%=dataset.getInt(7)%></p>
                     <label class="gb">GB</label>
                 </div>
                 <div class="config-item" data-target="ram">
                     <label for="ram">RAM</label>
-                    <p>4</p>
+                    <p><%=dataset.getInt(8)%></p>
                     <label class="gb">GB</label>
                 </div>
                 <div class="config-item" data-target="mem">
                     <label for="mem">Mem.</label>
-                    <p>8</p>
+                    <p><%=dataset.getInt(9)%></p>
                     <label class="gb">GB</label>
                 </div>
                 <div class="config-item">
                     <label for="bandwidth">Bandwidth</label>
-                    <p>100</p>
+                    <p><%=dataset.getInt(10)%></p>
                     <label class="gb">GB</label>
                 </div>
             </div>
         </section>
-
+        
         <div class="below">
             <section class="reviews">
                 <h2>Reviews</h2>
                 <div class="reviews-container">
-                    <iframe src="reviews.html"></iframe>
+                    <iframe src="reviews.jsp?product=<%=id%>"></iframe>
                  </div>  
             </section>
             <section class="brand">
@@ -115,25 +127,26 @@
         </div>
 
         <section class="other-items">
+            <%
+                sql = "SELECT * FROM `products`;";
+                pstmt=con.prepareStatement(sql);
+                dataset = pstmt.executeQuery();
+
+                for(int i =0;i<3;i++){
+                    dataset.next();
+            %>
             <div class="other-item">
-                <h3>APP Base</h3>
-                <p>Build Your APP with Own VPS service</p>
+                <h3><%=dataset.getString(2)%></h3>
+                <p><%=dataset.getString(3)%></p>
                 <a>More</a>
             </div>
-            <div class="other-item">
-                <h3>APP Base</h3>
-                <p>Build Your APP with Own VPS service</p>
-                <a>More</a>
-            </div>
-            <div class="other-item">
-                <h3>APP Base</h3>
-                <p>Build Your APP with Own VPS service</p>
-                <a>More</a>
-            </div>
+            <%
+                }
+            %>
         </section>
     </main>
     <footer>
-        <iframe src="/E-Commerce-Front-end/pages/footer.html" class="footer"></iframe>
+        <iframe src="/E-Commerce-Front-end/pages/footer.jsp" class="footer"></iframe>
     </footer>
 </body>
 </html>
