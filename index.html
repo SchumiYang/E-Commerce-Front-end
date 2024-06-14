@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/CSS/index.css">
+    <link rel="stylesheet" href="assets/CSS/general.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <title>ServerSwift</title>
+    <script src="assets/JS/modal.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="assets/JS/index.js" defer></script>
 </head>
@@ -17,12 +19,13 @@
 <body>
     <!--Navigation bar-->
     <div id="nav-placeholder">
-
     </div>
-
+    <div id="profile-placeholder">
+    </div>
     <script>
         $(document).ready(function () {
             $("#nav-placeholder").load("pages/nav.html");
+            $("#profile-placeholder").load("pages/profile.html");
         });
     </script>
     <!--end of Navigation bar-->

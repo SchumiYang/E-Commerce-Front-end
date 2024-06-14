@@ -143,6 +143,10 @@ header .profile {
     width: 150px;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
 @-webkit-keyframes slide-left {
     0% {
         -webkit-transform: translateX(40vw);

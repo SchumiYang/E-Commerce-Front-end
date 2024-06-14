@@ -49,10 +49,13 @@
             </form>
         </div>
 
-        <div><a href="/E-Commerce-Front-end/pages/cart.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
+        <div>
+            <a href="/E-Commerce-Front-end/pages/cart.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
         </div>
         <div class="profile">
-            <div><a href="/E-Commerce-Front-end/pages/profile.html"><i class="fa-solid fa-circle-user fa-xl"></i></a>
+            <div>
+                <i onclick="toggleWindow('profile')" class="fa-solid fa-circle-user fa-xl clickable"></i>
+                <!-- <i onclick="toggleWindow('profile')" class="fa-solid fa-circle-user fa-xl clickable"></i> -->
             </div>
         </div>
     </header>
@@ -74,11 +77,10 @@
                         class="fa-solid fa-cart-shopping fa-lg line-height80"></i></a>
             </div>
             <div class="profile-icon">
-                <a href="/E-Commerce-Front-end/pages/profile.html"><i
-                        class="fa-solid fa-circle-user fa-xl line-height80"></i></a>
+                <i onclick="toggleWindow('profile')" class="fa-solid fa-circle-user fa-xl line-height80 clickable"></i>
             </div>
             <div class="profile-icon">
-                <i class="fa-solid fa-bars line-height80 fa-xl" onclick="toggleMenu()"></i>
+                <i class="fa-solid fa-bars line-height80 fa-xl clickable" onclick="toggleMenu()"></i>
             </div>
         </div>
     </header>

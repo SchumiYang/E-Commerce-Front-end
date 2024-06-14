@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/CSS/general.css">
+    <script src="../assets/JS/modal.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!--Navigation bar-->
     <div id="nav-placeholder">
-
     </div>
-
+    <div id="profile-placeholder"></div>
     <script>
-    $(function(){
-    $("#nav-placeholder").load("nav.html");
-    });
+        $(function () {
+            $("#nav-placeholder").load("nav.html");
+            $("#profile-placeholder").load("profile.html");
+        });
     </script>
     <main>
         <div class="content">
@@ -31,7 +36,7 @@
                         <div class="operation-time">
                             <div class="status opened">Opened</div>
                             <div div="msg">&nbsp;• Closes at</div>
-                            <div class="time">&nbsp;8:00 PM</div> 
+                            <div class="time">&nbsp;8:00 PM</div>
                         </div>
                         <div class="addr">No. 200, Zhongbei Rd, Zhongli District, Taoyuan City, Taiwan 320</div>
                         <div class="contact-number">09-11 111 111</div>
@@ -42,7 +47,7 @@
                         <div class="operation-time">
                             <div class="status opened">Opened</div>
                             <div div="msg">&nbsp;• Closes at</div>
-                            <div class="time">&nbsp;8:00 PM</div> 
+                            <div class="time">&nbsp;8:00 PM</div>
                         </div>
                         <div class="addr">No. 200, Zhongbei Rd, Zhongli District, Taoyuan City, Taiwan 320</div>
                         <div class="contact-number">09-22 222 222</div>
@@ -53,7 +58,7 @@
                         <div class="operation-time">
                             <div class="status closed">Closed</div>
                             <div div="msg">&nbsp;• Opens at</div>
-                            <div class="time">&nbsp;9:00 AM</div> 
+                            <div class="time">&nbsp;9:00 AM</div>
                         </div>
                         <div class="addr">No. 200, Zhongbei Rd, Zhongli District, Taoyuan City, Taiwan 320</div>
                         <div class="contact-number">09-33 333 333</div>
@@ -64,7 +69,7 @@
                         <div class="operation-time">
                             <div class="status opened">Opened</div>
                             <div div="msg">&nbsp;• Closes at</div>
-                            <div class="time">&nbsp;8:00 PM</div> 
+                            <div class="time">&nbsp;8:00 PM</div>
                         </div>
                         <div class="addr">No. 200, Zhongbei Rd, Zhongli District, Taoyuan City, Taiwan 320</div>
                         <div class="contact-number">09-44 444 444</div>
@@ -75,19 +80,21 @@
                         <div class="operation-time">
                             <div class="status opened">Opened</div>
                             <div div="msg">&nbsp;• Closes at</div>
-                            <div class="time">&nbsp;8:00 PM</div> 
+                            <div class="time">&nbsp;8:00 PM</div>
                         </div>
                         <div class="addr">No. 200, Zhongbei Rd, Zhongli District, Taoyuan City, Taiwan 320</div>
                         <div class="contact-number">09-55 555 555</div>
                     </button>
                 </div>
                 <div class="map">
-                    <iframe id="addrID" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d829.2618310285651!2d121.24014760662376!3d24.95707635539268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468221447a0f021%3A0x2b86d2650bb8bcff!2sChung%20Yuan%20Christian%20University!5e0!3m2!1sen!2skr!4v1718062093769!5m2!1sen!2skr"
+                    <iframe id="addrID"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d829.2618310285651!2d121.24014760662376!3d24.95707635539268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468221447a0f021%3A0x2b86d2650bb8bcff!2sChung%20Yuan%20Christian%20University!5e0!3m2!1sen!2skr!4v1718062093769!5m2!1sen!2skr"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameBorder="0">
                     </iframe>
                 </div>
                 <div class="fixbutton hidden">
-                    <button id="maptoggle" onclick="mapToggle()"><img src="/E-Commerce-Front-end//assets/img/google-maps.webp"></button>
+                    <button id="maptoggle" onclick="mapToggle()"><img
+                            src="/E-Commerce-Front-end//assets/img/google-maps.webp"></button>
                 </div>
             </div>
         </div>
@@ -97,4 +104,5 @@
     </footer>
     <script src="../assets/JS/location.js"></script>
 </body>
+
 </html>

@@ -6,27 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administration</title>
     <link rel="stylesheet" href="../assets//CSS/admin.css">
-    <script src="../assets/JS/admin.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/9b3624985e.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="../assets/CSS/general.css">
+    <script src="../assets/JS/modal.js"></script>
+    <script src="../assets/JS/admin.js" defer></script>
 </head>
 
 <body>
     <div id="nav-placeholder">
-
     </div>
-
+    <div id="profile-placeholder"></div>
     <script>
         $(document).ready(function () {
             $("#nav-placeholder").load("nav.html");
+            $("#profile-placeholder").load("profile.html");
         });
     </script>
 
-    <div class="tab-container">
+    <div class="admin-container">
         <div class="tab-sidebar">
             <div class="tab-category">
                 <button class="tab-btn active"><i class="fa-solid fa-server"></i>Merch</button>

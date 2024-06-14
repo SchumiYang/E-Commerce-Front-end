@@ -16,7 +16,7 @@ h1 {
     text-align: center;
 }
 
-.tab-container {
+.admin-container {
     display: flex;
     max-width: max(60vw, 42rem);
     transition: all 1s;

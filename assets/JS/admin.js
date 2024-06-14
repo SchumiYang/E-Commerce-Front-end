@@ -2,7 +2,7 @@ let tabBtns = null;
 let tabSubBtns = null;
 let tabPanels = null;
 
-function showTab(categoryIndex, subCategoryIndex) {
+function showAdminTab(categoryIndex, subCategoryIndex) {
     // Remove active class from all buttons and panels
     tabBtns.forEach(btn => btn.classList.remove('active'));
     tabSubBtns.forEach(btn => btn.classList.remove('active'));
@@ -10,7 +10,7 @@ function showTab(categoryIndex, subCategoryIndex) {
 
     // Add active class to the clicked button
     tabBtns[categoryIndex].classList.add('active');
-    const subBtns = Array.from(tabBtns[categoryIndex].parentNode.querySelectorAll('.tab-subbtn'));
+    const subBtns = Array.from(tabBtns[categoryIndex].parentNode.querySelectorAll('.admin-container .tab-subbtn'));
 
     if (subBtns.length > 0) {
         // If the category has subcategories
@@ -20,7 +20,7 @@ function showTab(categoryIndex, subCategoryIndex) {
 
         let panelIndex = 0;
         for (let i = 0; i < categoryIndex; i++) {
-            panelIndex += tabBtns[i].parentNode.querySelectorAll('.tab-subbtn').length;
+            panelIndex += tabBtns[i].parentNode.querySelectorAll('.admin-container .tab-subbtn').length;
         }
         panelIndex += subCategoryIndex;
         tabPanels[panelIndex].classList.add('active');
@@ -31,13 +31,13 @@ function showTab(categoryIndex, subCategoryIndex) {
 }
 
 $(document).ready(function () {
-    tabBtns = document.querySelectorAll('.tab-btn');
-    tabSubBtns = document.querySelectorAll('.tab-subbtn');
-    tabPanels = document.querySelectorAll('.tab-panel');
+    tabBtns = document.querySelectorAll('.admin-container .tab-btn');
+    tabSubBtns = document.querySelectorAll('.admin-container .tab-subbtn');
+    tabPanels = document.querySelectorAll('.admin-container .tab-panel');
 
     tabBtns.forEach((btn, index) => {
         btn.addEventListener('click', () => {
-            showTab(index, 0); // Show the first subcategory by default
+            showAdminTab(index, 0); // Show the first subcategory by default
         });
     });
     tabSubBtns.forEach((subbtn) => {
@@ -47,7 +47,7 @@ $(document).ready(function () {
         subbtn.addEventListener('click', (event) => {
             console.log(categoryIndex + "/" + subIndex);
             event.stopPropagation(); // Prevent event bubbling to the main category button
-            showTab(categoryIndex, subIndex);
+            showAdminTab(categoryIndex, subIndex);
         });
     });
 });

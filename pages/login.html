@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!--Navigation bar-->
     <div id="nav-placeholder">
-
     </div>
-
+    <div id="profile-placeholder"></div>
     <script>
-    $(function(){
-    $("#nav-placeholder").load("nav.html");
-    });
+        $(function () {
+            $("#nav-placeholder").load("nav.html");
+            $("#profile-placeholder").load("profile.html");
+        });
     </script>
     <main>
         <div class="container">
@@ -38,11 +41,12 @@
                 </form>
                 <a href="register.html" class="hidden">First Time? Click Here To Register</a>
             </div>
-            
+
         </div>
-    </main> 
+    </main>
     <footer>
         <iframe src="/E-Commerce-Front-end/pages/footer.html" class="footer"></iframe>
     </footer>
 </body>
+
 </html>
