@@ -16,7 +16,7 @@
 
     <script>
         $(document).ready(function () {
-            $("#nav-placeholder").load("nav.html");
+            $("#nav-placeholder").load("nav.jsp");
         });
     </script>
 
@@ -125,6 +125,7 @@
         <br>
 
         <form class="checkout" method="post" action="checkout.jsp">
+            <input type="hidden" name="total" value="<%=total%>">
             <div class="checkout-btns">
                 <div id="paypal-button-container"></div>
                 <input type="submit" class="btn" value="Checkout">

@@ -19,7 +19,7 @@
 
     <script>
     $(function(){
-    $("#nav-placeholder").load("nav.html");
+    $("#nav-placeholder").load("nav.jsp");
     });
     </script>
     <%
@@ -29,10 +29,14 @@
             String cartId = Stream.of(request.getCookies()).filter(c->c.getName().equals("cartid")).map(c->c.getValue()).findFirst().orElse(null);
             if(cartId==null)
                 return;
-            sql="INSERT IGNORE INTO `cartdetails` (`cartId`,`productId`,`customized`, `quantity`) ";
-            sql+="VALUES ('"+cartId+"','"+id+"','0','"+request.getParameter("amount")+"');";      
-            con.createStatement().executeUpdate(sql);
-            out.println("<script>alert('Product added to cart!');</script>");
+            sql="INSERT IGNORE INTO `cartdetails` (`cartId`, `productId`, `customized`, `quantity`) VALUES (?,?,?,?);";
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, cartId);
+            pstmt.setString(2, id);
+            pstmt.setInt(3, 0);
+            pstmt.setString(4, request.getParameter("amount"));
+            pstmt.executeUpdate(); 
+            out.println("<script>alert('Added to cart!');</script>");
         }
     %>
     <main>
