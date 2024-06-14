@@ -1,7 +1,7 @@
 body {
     margin-top: 100px;
     padding: 0;
-    background-color: #1a1a1a;
+    background-color: #2D2D2D;
     color: #ffffff;
     font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
@@ -64,17 +64,19 @@ main {
     font-size: 30px;
 }
 
-.product-details h1, .product-details p {
+.product-details h1,
+.product-details p {
     margin: 5px 0px;
 }
 
-.product-details .instock{
+.product-details .instock {
     color: rgb(144, 144, 144);
     font-size: 15px;
     margin: 10px 0;
 }
 
-.product-details .price, .product-details .per-mo{
+.product-details .price,
+.product-details .per-mo {
     color: rgb(90, 90, 90);
     font-size: 18px;
     margin: 10px 10px 10px 0px;
@@ -86,7 +88,8 @@ main {
     justify-content: start;
 }
 
-.product-details .quantity button, .product-details .quantity input {
+.product-details .quantity button,
+.product-details .quantity input {
     background-color: #f8f8f8;
     border: none;
     color: #000;
@@ -94,18 +97,19 @@ main {
     margin: 0;
 }
 
-.quantity-container{
+.quantity-container {
     display: flex;
 }
 
-.quantity button, .quantity input {
+.quantity button,
+.quantity input {
     height: 30px;
 }
 
 .quantity button {
     width: 30px;
     height: 40px;
-    text-align: center; 
+    text-align: center;
 }
 
 .quantity input {
@@ -115,14 +119,16 @@ main {
 
 .quantity input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}    /*cr: w3school*/
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/*cr: w3school*/
 
 .buy-now {
     width: 200px;
     height: 44px;
-    background-color: #bababa;
+    background-color: #00ffcc;
     border: none;
     color: #000;
     padding: 0;
@@ -131,15 +137,17 @@ input::-webkit-inner-spin-button {
     border-radius: 5px;
     font-size: 15px;
     text-align: center;
-}
-
-.buy-now:hover {
-    background-color: #00ffcc;
-    font-weight: bold;
     transition: all 0.5s ease-in-out;
 }
 
-.minus, .plus {
+.buy-now:hover {
+    background-color: #017e75;
+    font-weight: bold;
+    color: white;
+}
+
+.minus,
+.plus {
     margin: 10px 0px;
     height: 30px;
 }
@@ -158,7 +166,8 @@ input::-webkit-inner-spin-button {
     margin-left: 40px;
 }
 
-.config-img, .t {
+.config-img,
+.t {
     position: relative;
 }
 
@@ -179,14 +188,14 @@ input::-webkit-inner-spin-button {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
-  appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 .cpu {
@@ -261,7 +270,8 @@ input[type=number] {
     margin-right: auto;
 }
 
-.reviews, .brand {
+.reviews,
+.brand {
     width: 40%;
     margin-bottom: 40px;
 }
@@ -270,12 +280,12 @@ input[type=number] {
     position: relative;
 }
 
-.reviews-container{
+.reviews-container {
     width: 100%;
 }
 
 .reviews-container iframe {
-    margin-top:20px;
+    margin-top: 20px;
     width: 100%;
     height: 350px;
     border: none;
@@ -285,7 +295,8 @@ input[type=number] {
     margin-bottom: 40px;
 }
 
-.reviews h2, .brand h2 {
+.reviews h2,
+.brand h2 {
     font-size: 24px;
 }
 
@@ -302,7 +313,7 @@ input[type=number] {
     padding: 15px;
 }
 
-.brand-tag-container{
+.brand-tag-container {
     display: flex;
     flex-direction: row;
     height: 60px;
@@ -371,7 +382,7 @@ input[type=number] {
     border: none;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
     main {
         border-radius: 20px;
     }
@@ -391,7 +402,7 @@ input[type=number] {
         max-width: 100%;
     }
 
-    .quantity-container{
+    .quantity-container {
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -427,16 +438,18 @@ input[type=number] {
         align-items: center;
     }
 
-    .reviews, .brand {
+    .reviews,
+    .brand {
         width: 100%;
     }
 
-    .reviews h2, .brand h2{
+    .reviews h2,
+    .brand h2 {
         text-align: center;
         margin: 10px;
     }
 
-    .reviews-container{
+    .reviews-container {
         display: flex;
         justify-content: space-evenly;
     }
@@ -444,7 +457,7 @@ input[type=number] {
     .brand-tag {
         margin: 0 3px;
     }
-    
+
     .reviews-container iframe {
         margin-top: 10px;
     }
