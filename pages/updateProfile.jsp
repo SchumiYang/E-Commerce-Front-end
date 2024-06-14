@@ -19,7 +19,7 @@
 		}
 	}
 	
-	String username = request.getParameter("username");
+	String username = request.getParameter("newname");
 	String password = request.getParameter("password");
     String email = request.getParameter("email");
 	String address = request.getParameter("address");

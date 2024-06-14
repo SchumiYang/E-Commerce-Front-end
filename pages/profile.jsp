@@ -39,8 +39,6 @@
         String cartID = "";
         String id = "";
         String customerID = "";
-        
-       
 
         Cookie[] cookies = request.getCookies();
         if(cookies != null){
@@ -53,6 +51,7 @@
                 }
             }
         }
+
         // Connection con = null;
         try {
 		Class.forName("com.mysql.jdbc.Driver");
@@ -119,17 +118,7 @@
                         <div class="value">[Phone]</div>
                     </div>
 
-    <%
-                        }
-                    con.close();
-                }
-            } catch (SQLException e) {
-                out.println("SQL錯誤: " + e.toString());
-            }
-        } catch (ClassNotFoundException err) {
-            out.println("Class錯誤: " + err.toString());
-        }
-    %>
+
 
                     <button class="edit" value="Edit" onclick="ed()">Edit</button>
                 </div>
@@ -138,13 +127,13 @@
                         <div class="details">
                             <div class="product">
                                 <div class="label">Username:</div>
-                                <input type="text" name="username" value="">
+                                <input type="text" name="newname" value="<%=username%>">
                                 <div class="label">Password:</div>
-                                <input type="password" name="password" value="">
+                                <input type="text" name="password" value="<%=password%>">
                                 <div class="label">E-mail:</div>
-                                <input type="email" name="email" value="">
+                                <input type="email" name="email" value="<%=email%>">
                                 <div class="label">Address:</div>
-                                <input type="text" name="address" value="">
+                                <input type="text" name="address" value="<%=address%>">
                                 <div class="label">Phone:</div>
                                 <input type="number" name="phone" value="">
                             </div>
@@ -156,6 +145,18 @@
                     </form>
                     <button class="edit" value="back" onclick="back()">back</button>
                 </div>
+
+                <%
+                        }
+                    con.close();
+                }
+            } catch (SQLException e) {
+                out.println("SQL錯誤: " + e.toString());
+            }
+        } catch (ClassNotFoundException err) {
+            out.println("Class錯誤: " + err.toString());
+        }
+    %>
             </div>
             <div class="tab-panel">
                 <div class="header">
