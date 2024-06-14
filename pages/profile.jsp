@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<%@page contentType="text/html"%> 
+<%@page pageEncoding="UTF-8"%>
+<%@page import = "java.sql.*"%>
+<%@page import = "java.util.Random"%>
 <html lang="en">
 
 <head>
@@ -22,9 +26,52 @@
 
     <script>
         $(document).ready(function () {
-            $("#nav-placeholder").load("nav.html");
+            $("#nav-placeholder").load("nav.jsp");
         });
     </script>
+
+        <%	
+        String sessionID = "";
+        sessionID = request.getSession().getId();
+        long millis=System.currentTimeMillis(); 
+        Date date = new Date(millis);
+        String username = "";
+        String cartID = "";
+        String id = "";
+        String customerID = "";
+        
+       
+
+        Cookie[] cookies = request.getCookies();
+        if(cookies != null){
+            int count = cookies.length;
+            for(int i=0; i < count; i++){
+                if(cookies[i].getName().equals("id")){
+                    id = cookies[i].getValue();
+                } else if(cookies[i].getName().equals("username")){
+                    username = cookies[i].getValue();
+                }
+            }
+        }
+        // Connection con = null;
+        try {
+		Class.forName("com.mysql.jdbc.Driver");
+            try {
+                String url = "jdbc:mysql://localhost/?serverTimezone=UTC";
+                Connection con = DriverManager.getConnection(url, "root", "1234");
+                if (con.isClosed()) {
+                    out.println("連線建立失敗");
+                } else {
+                    con.createStatement().execute("use `members`");
+                    String sql = "SELECT * FROM members WHERE id=" + id;
+                    ResultSet resultSet = con.createStatement().executeQuery(sql);
+                    
+                    if (resultSet.next()) {
+                        // Retrieve values from the result set
+                        String password = resultSet.getString("pwd");
+                        String email = resultSet.getString("email");
+                        String address = resultSet.getString("address");
+        %>
 
     <div class="tab-container">
         <div class="tab-sidebar">
@@ -49,22 +96,22 @@
                 <div id="info" class="info">
                     <div class="flex">
                         <div class="label">Username:</div>
-                        <div class="value">[Username]</div>
+                        <div class="value"><%=username%></div>
                     </div>
 
                     <div class="flex">
                         <div class="label">Password:</div>
-                        <div class="value">[Password]</div>
+                        <div class="value"><%=password%></div>
                     </div>
 
                     <div class="flex">
                         <div class="label">E-mail:</div>
-                        <div class="value">[E-mail]</div>
+                        <div class="value"><%=email%></div>
                     </div>
 
                     <div class="flex">
                         <div class="label">Address:</div>
-                        <div class="value">[Address]</div>
+                        <div class="value"><%=address%></div>
                     </div>
 
                     <div class="flex">
@@ -72,14 +119,26 @@
                         <div class="value">[Phone]</div>
                     </div>
 
+    <%
+                        }
+                    con.close();
+                }
+            } catch (SQLException e) {
+                out.println("SQL錯誤: " + e.toString());
+            }
+        } catch (ClassNotFoundException err) {
+            out.println("Class錯誤: " + err.toString());
+        }
+    %>
+
                     <button class="edit" value="Edit" onclick="ed()">Edit</button>
                 </div>
                 <div id="edit" class="tform">
-                    <form method="post">
+                    <form action="updateProfile.jsp" method="post">
                         <div class="details">
                             <div class="product">
                                 <div class="label">Username:</div>
-                                <input type="text" name="name" value="">
+                                <input type="text" name="username" value="">
                                 <div class="label">Password:</div>
                                 <input type="password" name="password" value="">
                                 <div class="label">E-mail:</div>

@@ -11,7 +11,8 @@
     <%
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		String redirectUrl = "/E-Commerce-Front-end/" +  request.getParameter("redirectUrl");
+		String redirectUrl = "/E-Commerce-Front-end/index.jsp";
+		// String redirectUrl = "/E-Commerce-Front-end/" +  request.getParameter("redirectUrl");
 		try {
             Class.forName("com.mysql.jdbc.Driver");	  
 			String url="jdbc:mysql://localhost/members";
