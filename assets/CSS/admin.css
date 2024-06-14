@@ -9,7 +9,7 @@ body {
 }
 
 .header {
-    margin: 32px;
+    margin: 16px
 }
 
 h1 {
@@ -24,6 +24,7 @@ h1 {
     min-height: 70vh;
     border-radius: 5px;
     margin-top: 80px;
+    margin-bottom: 50px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -87,7 +88,7 @@ h1 {
 
 .tab-content {
     flex: 1;
-    padding: 20px;
+    padding: 48px;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
     border-top-right-radius: 10px;

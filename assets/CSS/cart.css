@@ -1,6 +1,7 @@
 * {
     padding-top: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 
 body {
@@ -8,11 +9,18 @@ body {
     font-family: "Noto Sans", sans-serif;
 }
 
+main {
+    min-height: 80vh;
+}
+
 .cart-container {
     font-size: 18px;
     margin: auto;
+    margin-top: min(10%, 80px);
     width: min(65rem, 100vw);
     padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .cart-header,
@@ -138,6 +146,7 @@ body {
     display: flex;
     width: 73%;
     justify-content: right;
+    margin-bottom: 5rem;
 }
 
 .btn {
@@ -152,10 +161,13 @@ body {
     font-weight: bold;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
-    transition: transform 80ms ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .btn:hover {
+    background-color: #017e75;
+    color: #fff;
+    font-weight: bold;
     transform: scale(1.05);
 }
 
@@ -309,7 +321,8 @@ body {
     }
 
     .total-item {
-        font-size: 3vw;
+        width: 40%;
+        font-size: max(3vw,18px);
     }
 
     .line {
@@ -317,7 +330,8 @@ body {
     }
 
     .btn {
-        font-size: 3vw;
+        width: 40%;
+        font-size: max(3vw, 16px);
     }
 
     .hrcontainer,

@@ -143,9 +143,29 @@ header .profile {
     width: 150px;
 }
 
-/*header div:nth-child(n+3){
-    border-left: solid darkgray;
-*/
+@-webkit-keyframes slide-left {
+    0% {
+        -webkit-transform: translateX(40vw);
+        transform: translateX(40vw);
+    }
+
+    100% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slide-left {
+    0% {
+        -webkit-transform: translateX(40vw);
+        transform: translateX(40vw);
+    }
+
+    100% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+}
 
 @media screen and (max-width:1200px) {
     .mobile {
@@ -195,6 +215,8 @@ header .profile {
     }
 
     .mega-menu {
+        -webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
         width: 35%;
         z-index: 2;
         visibility: visible;
