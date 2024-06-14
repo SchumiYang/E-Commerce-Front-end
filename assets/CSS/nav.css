@@ -201,9 +201,9 @@ header .profile {
     }
 
     .mega-menu ul {
+        height: 95vh;
         background-color: #3e3e3e;
         list-style-type: none;
-        border-bottom-left-radius: 16px;
     }
 
     .mega-menu ul li {
@@ -218,6 +218,7 @@ header .profile {
 
     .mega-menu ul li:hover {
         background-color: #494949;
+        text-decoration: underline;
     }
 
 }
