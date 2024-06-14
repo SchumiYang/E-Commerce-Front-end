@@ -92,7 +92,7 @@
                     src="/E-Commerce-Front-end/assets/img/logo.webp"></a></div>
         <div></div>
         <div><a href="/E-Commerce-Front-end/index.jsp">Home</a></div>
-        <div><a href="/E-Commerce-Front-end/pages/aboutus.html">About Us</a></div>
+        <div><a href="/E-Commerce-Front-end/pages/aboutus.jsp">About Us</a></div>
         <div class="dropdown-menu">
             <div class="dropdown-icon-text">
                 <div class="dropdown-text">Product</div>
@@ -104,16 +104,15 @@
                 </div>
             </div>
             <div class="dropdown-content">
-                <a href="/E-Commerce-Front-end/pages/product.html">App Base</a>
-                <a href="/E-Commerce-Front-end/pages/product.html">Website</a>
-                <a href="/E-Commerce-Front-end/pages/product.html">Database</a>
-                <a href="/E-Commerce-Front-end/pages/product.html">AI Base</a>
-                <a href="/E-Commerce-Front-end/pages/item-cus.html">Customized</a>
-                <a href="/E-Commerce-Front-end/pages/product.html">See All</a>
+                <a href="/E-Commerce-Front-end/pages/product.jsp">App Base</a>
+                <a href="/E-Commerce-Front-end/pages/product.jsp">Website</a>
+                <a href="/E-Commerce-Front-end/pages/product.jsp">Database</a>
+                <a href="/E-Commerce-Front-end/pages/product.jsp">AI Base</a>
+                <a href="/E-Commerce-Front-end/pages/item-cus.jsp">Customized</a>
+                <a href="/E-Commerce-Front-end/pages/product.jsp">See All</a>
             </div>
         </div>
-        <!-- <div><a href="/E-Commerce-Front-end/pages/faq.html">FAQ</a></div> -->
-        <div><a href="/E-Commerce-Front-end/pages/location.html">Location</a></div>
+        <div><a href="/E-Commerce-Front-end/pages/location.jsp">Location</a></div>
         <div class="search-bar">
             <form action="search.jsp">
                 <input type="search" id="search" name="search" placeholder="Looking for...?" />
@@ -121,7 +120,7 @@
             </form>
         </div>
         <div>
-            <a href="/E-Commerce-Front-end/pages/cart.html"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
+            <a href="/E-Commerce-Front-end/pages/cart.jsp"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
         </div>
         <div class="profile">
             <div>
@@ -141,9 +140,9 @@
     </header>
 
     <header class="mobile">
-        <div class="logo"><a href="/E-Commerce-Front-end/index.html"><img
+        <div class="logo"><a href="/E-Commerce-Front-end/index.jsp"><img
                     src="/E-Commerce-Front-end/assets/img/logo.webp"></a></div>
-        <div class="small-logo"><a href="/E-Commerce-Front-end/index.html"><img
+        <div class="small-logo"><a href="/E-Commerce-Front-end/index.jsp"><img
                     src="/E-Commerce-Front-end/assets/img/small-logo.webp"></a></div>
         <div class="search-bar line-height80">
             <form action="search.jsp">
@@ -153,11 +152,11 @@
         </div>
         <div class="profile">
             <div class="profile-icon">
-                <a href="/E-Commerce-Front-end/pages/cart.html"><i
+                <a href="/E-Commerce-Front-end/pages/cart.jsp"><i
                         class="fa-solid fa-cart-shopping fa-lg line-height80"></i></a>
             </div>
             <div class="profile-icon">
-                <a href="/E-Commerce-Front-end/pages/profile.html"><i
+                <a href="/E-Commerce-Front-end/pages/profile.jsp"><i
                         class="fa-solid fa-circle-user fa-xl line-height80"></i></a>
             </div>
             <div class="profile-icon">
@@ -168,9 +167,9 @@
 
     <div class="mega-menu" style="display: none;">
         <ul>
-            <li onclick="location.href='/E-Commerce-Front-end/pages/aboutus.html';">About Us</li>
-            <li onclick="location.href='/E-Commerce-Front-end/pages/location.html';">Location</li>
-            <li onclick="location.href='/E-Commerce-Front-end/pages/product.html';">Products</a>
+            <li onclick="location.href='/E-Commerce-Front-end/pages/aboutus.jsp';">About Us</li>
+            <li onclick="location.href='/E-Commerce-Front-end/pages/location.jsp';">Location</li>
+            <li onclick="location.href='/E-Commerce-Front-end/pages/product.jsp';">Products</a>
                 <!-- Add more menu items as needed -->
         </ul>
     </div>
