@@ -112,7 +112,7 @@
                 <a href="/E-Commerce-Front-end/pages/product.jsp">See All</a>
             </div>
         </div>
-        <div><a href="/E-Commerce-Front-end/pages/location.jsp">Location</a></div>
+        <div><a href="/E-Commerce-Front-end/pages/location.html">Location</a></div>
         <div class="search-bar">
             <form action="search.jsp">
                 <input type="search" id="search" name="search" placeholder="Looking for...?" />
@@ -168,7 +168,7 @@
     <div class="mega-menu" style="display: none;">
         <ul>
             <li onclick="location.href='/E-Commerce-Front-end/pages/aboutus.html';">About Us</li>
-            <li onclick="location.href='/E-Commerce-Front-end/pages/location.jsp';">Location</li>
+            <li onclick="location.href='/E-Commerce-Front-end/pages/location.html';">Location</li>
             <li onclick="location.href='/E-Commerce-Front-end/pages/product.jsp';">Products</a>
                 <!-- Add more menu items as needed -->
         </ul>
