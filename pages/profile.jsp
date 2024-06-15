@@ -145,9 +145,82 @@
                     </form>
                     <button class="edit" value="back" onclick="back()">back</button>
                 </div>
+    
 
-                <%
+
+
+            </div>
+            <div class="tab-panel">
+                <div class="header">
+                    <h1>History</h1>
+                </div>
+                <div class="order-container">
+                    <%
+                    String sql2 = "SELECT * FROM `order` WHERE `userId` = ?;";
+                    PreparedStatement pstmt2=con.prepareStatement(sql2);
+                    pstmt2.setInt(1,Integer.parseInt(id));
+
+                    ResultSet dataset2 = pstmt2.executeQuery();
+
+                    while(dataset2.next()){
+                        String orderid = dataset2.getString("id");
+                        String sql3 = "SELECT * FROM orderdetails WHERE orderId=" + orderid;
+                        PreparedStatement pstmt3=con.prepareStatement(sql2);
+                        ResultSet dataset3 = con.createStatement().executeQuery(sql3);
+                        while(dataset3.next()){
+                            int orderId = dataset3.getInt(2);
+                            int productId = dataset3.getInt(3);
+                            int q = dataset3.getInt(4);
+                            int customized = dataset3.getInt(5);
+                    %>
+                    <div class="tag">
+                        <div class="order-item">
+                            <div class="order-img">
+                                <img src="../assets/img/<%=(customized != 1 ? "product/" + productId + ".svg" : "equa.webp")%>" />
+                            </div>
+                            <div class="order-detail">
+                                <p class="order-num"><%=orderId%></p>
+                                <p class="order-product"><%=productId%></p>
+                                <p class="order-amount">x<%=q%></p>
+                            </div>
+                            <div class="order-action">
+                                <button id="commet" class="comment-btn order-done">Reivew</button>
+                            </div>
+                        </div>
+                        <div class="review-form-container" style="display: none;">
+                            <form class="review-form">
+                                <h2>Comment:</h2>
+                                <div class="form-group">
+                                    <label for="rating">Rating:</label>
+                                    <div class="stars">
+                                        <input type="radio" name="rating" id="star5" value="5"><label
+                                            for="star5">★</label>
+                                        <input type="radio" name="rating" id="star4" value="4"><label
+                                            for="star4">★</label>
+                                        <input type="radio" name="rating" id="star3" value="3"><label
+                                            for="star3">★</label>
+                                        <input type="radio" name="rating" id="star2" value="2"><label
+                                            for="star2">★</label>
+                                        <input type="radio" name="rating" id="star1" value="1"><label
+                                            for="star1">★</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="user">User:</label>
+                                    <input type="text" id="user" name="User" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="content">Content:</label>
+                                    <textarea id="content" name="content" rows="5" required></textarea>
+                                </div>
+                                <input type="submit" value="Submit" />
+                            </form>
+                        </div>
+                    </div>
+                    <%
                         }
+                    }
+                    }
                     con.close();
                 }
             } catch (SQLException e) {
@@ -157,104 +230,12 @@
             out.println("Class錯誤: " + err.toString());
         }
     %>
-            </div>
-            <div class="tab-panel">
-                <div class="header">
-                    <h1>History</h1>
-                </div>
-                <div class="order-container">
-                    <div class="tag">
-                        <div class="order-item">
-                            <div class="order-img">
-                                <img src="../assets/img/cpu.webp" />
-                            </div>
-                            <div class="order-detail">
-                                <p class="order-num">Order #123456</p>
-                                <p class="order-product">AI Based</p>
-                                <p class="order-amount">x4</p>
-                            </div>
-                            <div class="order-action">
-                                <button id="commet" class="comment-btn order-done">Reivew</button>
-                            </div>
-                        </div>
-                        <div class="review-form-container" style="display: none;">
-                            <form class="review-form">
-                                <h2>Comment:</h2>
-                                <div class="form-group">
-                                    <label for="rating">Rating:</label>
-                                    <div class="stars">
-                                        <input type="radio" name="rating" id="star5" value="5"><label
-                                            for="star5">★</label>
-                                        <input type="radio" name="rating" id="star4" value="4"><label
-                                            for="star4">★</label>
-                                        <input type="radio" name="rating" id="star3" value="3"><label
-                                            for="star3">★</label>
-                                        <input type="radio" name="rating" id="star2" value="2"><label
-                                            for="star2">★</label>
-                                        <input type="radio" name="rating" id="star1" value="1"><label
-                                            for="star1">★</label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="user">User:</label>
-                                    <input type="text" id="user" name="User" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="content">Content:</label>
-                                    <textarea id="content" name="content" rows="5" required></textarea>
-                                </div>
-                                <input type="submit" value="Submit" />
-                            </form>
-                        </div>
-                    </div>
-                    <div class="tag">
-                        <div class="order-item">
-                            <div class="order-img">
-                                <img src="../assets/img/cpu.webp" />
-                            </div>
-                            <div class="order-detail">
-                                <p class="order-num">Order #123457</p>
-                                <p class="order-product">AI Based</p>
-                                <p class="order-amount">x4</p>
-                            </div>
-                            <div class="order-action">
-                                <button id="commet" class="comment-btn order-done">Reivew</button>
-                            </div>
-                        </div>
-                        <div class="review-form-container" style="display: none;">
-                            <form class="review-form">
-                                <h2>Comment:</h2>
-                                <div class="form-group">
-                                    <label for="rating">Rating:</label>
-                                    <div class="stars">
-                                        <input type="radio" name="rating" id="star5" value="5"><label
-                                            for="star5">★</label>
-                                        <input type="radio" name="rating" id="star4" value="4"><label
-                                            for="star4">★</label>
-                                        <input type="radio" name="rating" id="star3" value="3"><label
-                                            for="star3">★</label>
-                                        <input type="radio" name="rating" id="star2" value="2"><label
-                                            for="star2">★</label>
-                                        <input type="radio" name="rating" id="star1" value="1"><label
-                                            for="star1">★</label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="user">User:</label>
-                                    <input type="text" id="user" name="User" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="content">Content:</label>
-                                    <textarea id="content" name="content" rows="5" required></textarea>
-                                </div>
-                                <input type="submit" value="Submit" />
-                            </form>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+
     <footer>
         <iframe src="/E-Commerce-Front-end/pages/footer.jsp" class="footer"></iframe>
     </footer>
