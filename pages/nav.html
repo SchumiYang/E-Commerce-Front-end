@@ -21,7 +21,7 @@
         <div></div>
         <div><a href="/E-Commerce-Front-end/index.html">Home</a></div>
         <div><a href="/E-Commerce-Front-end/pages/aboutus.html">About Us</a></div>
-        <div class="dropdown-menu">
+        <div class="dropdown-menu clickable">
             <div class="dropdown-icon-text">
                 <div class="dropdown-text">Product</div>
                 <div class="dropdown-arrow">
@@ -78,16 +78,16 @@
                         class="fa-solid fa-circle-user fa-xl line-height80"></i></a>
             </div>
             <div class="profile-icon">
-                <i class="fa-solid fa-bars line-height80 fa-xl" onclick="toggleMenu()"></i>
+                <i class="fa-solid fa-bars line-height80 fa-xl clickable" onclick="toggleMenu()"></i>
             </div>
         </div>
     </header>
 
     <div class="mega-menu" style="display: none;">
         <ul>
-            <li onclick="location.href='/E-Commerce-Front-end/pages/aboutus.html';">About Us</li>
-            <li onclick="location.href='/E-Commerce-Front-end/pages/location.html';">Location</li>
-            <li onclick="location.href='/E-Commerce-Front-end/pages/product.html';">Products</a>
+            <li class="clickable" onclick="location.href='/E-Commerce-Front-end/pages/aboutus.html';">About Us</li>
+            <li class="clickable" onclick="location.href='/E-Commerce-Front-end/pages/location.html';">Location</li>
+            <li class="clickable" onclick="location.href='/E-Commerce-Front-end/pages/product.html';">Products</a>
                 <!-- Add more menu items as needed -->
         </ul>
     </div>

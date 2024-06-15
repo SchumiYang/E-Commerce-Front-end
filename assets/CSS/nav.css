@@ -139,6 +139,10 @@ header .profile {
     display: none;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
 .search-bar input {
     width: 150px;
 }
@@ -211,7 +215,6 @@ header .profile {
     .menu .menu-dropdown {
         height: 50px;
         width: 50px;
-        cursor: pointer;
     }
 
     .mega-menu {
@@ -229,7 +232,6 @@ header .profile {
     }
 
     .mega-menu ul li {
-        cursor: pointer;
         height: 80px;
         text-align: center;
         font-size: 20px;
