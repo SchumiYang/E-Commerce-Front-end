@@ -206,8 +206,6 @@ main {
     animation: slide-in-bottom 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955);
     border: 5px solid black;
     border-radius: 50%;
-    width: 64px;
-    height: 64px;
     padding: 16px;
     font-size: 70px;
 }
@@ -220,6 +218,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+    margin-bottom: 20rem;
 }
 
 .action-btn {

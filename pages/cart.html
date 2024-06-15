@@ -32,7 +32,7 @@
             </div>
             <div class="cart-item">
                 <div class="product">
-                    <img src="../assets/img/cpu.webp" alt="Product Image" />
+                    <img src="../assets/img/product/10.svg" alt="Product Image" />
                     <div class="detail">
                         <span>AI Based</span>
                         <span class="spec">vCPU: 6c<br>vGPU: 3G<br>RAM: 64G<br>Mem. 128G<br>Bandwidth 1G</span>
@@ -40,19 +40,19 @@
                 </div>
                 <div>NT$ 250</div>
                 <div class="quantity-control">
-                    <form method="post" action="minus.jsp">
+                    <form method="post" action="">
                         <input type="hidden" name="product" value="product_id">
                         <input type="submit" value="-">
                     </form>
                     <span>4</span>
-                    <form method="post" action="add.jsp">
+                    <form method="post" action="">
                         <input type="hidden" name="product" value="product_id">
                         <input type="submit" value="+">
                     </form>
                 </div>
                 <div>NT$ 1000</div>
                 <div>
-                    <form id="delete1" method="post" action="delete.jsp">
+                    <form id="delete1" method="post" action="">
                         <input type="hidden" name="product" value="product_id">
                         <i class="fa-solid fa-trash delete" onclick="$('#delete1').submit();"></i>
                     </form>
@@ -60,7 +60,7 @@
             </div>
             <div class="cart-item">
                 <div class="product">
-                    <img src="../assets/img/cpu.webp" alt="Product Image" />
+                    <img src="../assets/img/product/10.svg" alt="Product Image" />
                     <div class="detail">
                         <span>AI Based</span>
                         <span class="spec">vCPU: 6c<br>vGPU: 3G<br>RAM: 64G<br>Mem. 128G<br>Bandwidth 1G</span>
@@ -68,19 +68,19 @@
                 </div>
                 <div>NT$ 250</div>
                 <div class="quantity-control">
-                    <form method="post" action="minus.jsp">
+                    <form method="post" action="">
                         <input type="hidden" name="product" value="product_id">
                         <input type="submit" value="-">
                     </form>
                     <span>2</span>
-                    <form method="post" action="add.jsp">
+                    <form method="post" action="">
                         <input type="hidden" name="product" value="product_id">
                         <input type="submit" value="+">
                     </form>
                 </div>
                 <div>NT$ 500</div>
                 <div>
-                    <form id="delete2" method="post" action="delete.jsp">
+                    <form id="delete2" method="post" action="">
                         <input type="hidden" name="product" value="product_id">
                         <i class="fa-solid fa-trash delete" onclick="$('#delete2').submit();"></i>
                     </form>
@@ -99,7 +99,7 @@
         </div>
         <br>
 
-        <form class="checkout" method="post" action="checkout.jsp">
+        <form class="checkout" method="post" action="checkout.html">
             <div class="checkout-btns">
                 <div id="paypal-button-container"></div>
                 <input type="submit" class="btn" value="Checkout">
