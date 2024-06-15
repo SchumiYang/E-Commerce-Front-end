@@ -218,6 +218,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+    margin-bottom: 20rem;
 }
 
 .action-btn {

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
-    <link rel="stylesheet" href="../assets/CSS/cart.css">
+    <link rel="stylesheet" href="../assets/CSS/cart.css?time=<%=System.currentTimeMillis()%>">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/9b3624985e.js" crossorigin="anonymous"></script>
 </head>
@@ -71,7 +71,7 @@
         <h2>Your order has been sent!</h2>
         <div class="action">
             <button class="action-btn" onclick="location.href='profile.jsp'">Orders</button>
-            <button class="action-btn" onclick="location.href='index.jsp'">Return</button>
+            <button class="action-btn" onclick="location.href='../index.jsp'">Return</button>
         </div>
     </div>
     <footer>
