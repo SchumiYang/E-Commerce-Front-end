@@ -166,8 +166,19 @@
                         class="fa-solid fa-cart-shopping fa-lg line-height80"></i></a>
             </div>
             <div class="profile-icon">
-                <a href="/E-Commerce-Front-end/pages/profile.jsp"><i
-                        class="fa-solid fa-circle-user fa-xl line-height80"></i></a>
+                <%
+                if(username == null || username.equals("")){
+                %>
+                <a href="/E-Commerce-Front-end/pages/profile.jsp">
+                <%
+                } else {
+                %>
+                <a href="/E-Commerce-Front-end/pages/login.jsp">
+                <%
+                }
+                %>
+                <i class="fa-solid fa-circle-user fa-xl line-height80"></i>
+                </a>
             </div>
             <div class="profile-icon">
                 <i class="fa-solid fa-bars line-height80 fa-xl" onclick="toggleMenu()"></i>
