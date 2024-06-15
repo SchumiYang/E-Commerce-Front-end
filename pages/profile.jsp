@@ -172,6 +172,12 @@
                             int productId = dataset3.getInt(3);
                             int q = dataset3.getInt(4);
                             int customized = dataset3.getInt(5);
+
+                            String sql4 = "SELECT * FROM `products` WHERE `id`=" + productId;
+                            PreparedStatement pstmt4=con.prepareStatement(sql4);
+                            ResultSet dataset4 = con.createStatement().executeQuery(sql4);
+                            while(dataset4.next()){
+                                String productName = dataset4.getString(2);
                     %>
                     <div class="tag">
                         <div class="order-item">
@@ -179,8 +185,8 @@
                                 <img src="../assets/img/<%=(customized != 1 ? "product/" + productId + ".svg" : "equa.webp")%>" />
                             </div>
                             <div class="order-detail">
-                                <p class="order-num"><%=orderId%></p>
-                                <p class="order-product"><%=productId%></p>
+                                <p class="order-num">Order#<%=orderId%></p>
+                                <p class="order-product"><%=productName%></p>
                                 <p class="order-amount">x<%=q%></p>
                             </div>
                             <div class="order-action">
@@ -218,6 +224,7 @@
                         </div>
                     </div>
                     <%
+                    }
                         }
                     }
                     }
