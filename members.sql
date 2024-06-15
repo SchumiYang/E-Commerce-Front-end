@@ -29,7 +29,7 @@ CREATE TABLE `cart` (
   `userId` int NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (1,6,'2024-06-14 22:25:59');
+INSERT INTO `cart` VALUES (1,6,'2024-06-14 22:25:59'),(2,6,'2024-06-14 23:37:57'),(3,6,'2024-06-14 23:47:28'),(4,6,'2024-06-14 23:51:59'),(5,6,'2024-06-14 23:58:42'),(6,6,'2024-06-14 23:59:03'),(7,6,'2024-06-14 23:59:10'),(8,6,'2024-06-14 23:59:25'),(9,6,'2024-06-14 23:59:26'),(10,6,'2024-06-14 23:59:26'),(11,6,'2024-06-14 23:59:26'),(12,6,'2024-06-14 23:59:59'),(13,6,'2024-06-15 00:00:17'),(14,6,'2024-06-15 00:00:28'),(15,6,'2024-06-15 00:00:34'),(16,6,'2024-06-15 00:02:10'),(17,6,'2024-06-15 00:02:45');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -56,7 +56,7 @@ CREATE TABLE `cartdetails` (
   `customized` int NOT NULL DEFAULT '0',
   `quantity` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`,`cartId`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +65,6 @@ CREATE TABLE `cartdetails` (
 
 LOCK TABLES `cartdetails` WRITE;
 /*!40000 ALTER TABLE `cartdetails` DISABLE KEYS */;
-INSERT INTO `cartdetails` VALUES (10,1,2,0,1);
 /*!40000 ALTER TABLE `cartdetails` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,12 +77,13 @@ DROP TABLE IF EXISTS `comment`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `comment` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `userId` int DEFAULT NULL,
-  `productId` int DEFAULT NULL,
-  `title` varchar(45) DEFAULT NULL,
-  `rating` int DEFAULT NULL,
-  `comment` text,
-  `timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `userId` int NOT NULL,
+  `productId` int NOT NULL,
+  `title` varchar(45) NOT NULL,
+  `rating` int NOT NULL,
+  `comment` text NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `customized` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -95,7 +95,7 @@ CREATE TABLE `comment` (
 
 LOCK TABLES `comment` WRITE;
 /*!40000 ALTER TABLE `comment` DISABLE KEYS */;
-INSERT INTO `comment` VALUES (1,1,1,'Perfect!',3,'I\'ve been wearing my AFT for months now and I always get compliments, not to mention they are comfortable','2024-06-14 19:44:33'),(2,2,1,'Bad!',1,'This product sucks @@!','2024-06-14 19:57:14');
+INSERT INTO `comment` VALUES (1,1,1,'Perfect!',3,'I\'ve been wearing my AFT for months now and I always get compliments, not to mention they are comfortable','2024-06-14 19:44:33',0),(2,2,1,'Bad!',1,'This product sucks @@!','2024-06-14 19:57:14',0);
 /*!40000 ALTER TABLE `comment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -108,9 +108,9 @@ DROP TABLE IF EXISTS `cus_product`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cus_product` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `productsName` varchar(45) NOT NULL,
-  `productsDescribe` varchar(100) NOT NULL,
-  `instock` int NOT NULL,
+  `productsName` varchar(45) DEFAULT 'Customized VPS',
+  `productsDescribe` varchar(100) DEFAULT 'Make the one you really needed',
+  `instock` int NOT NULL DEFAULT '1',
   `defaultPrice` int NOT NULL,
   `defaultCPU` int NOT NULL,
   `defaultGPU` int NOT NULL,
@@ -200,7 +200,7 @@ CREATE TABLE `order` (
   `status` int NOT NULL DEFAULT '0',
   `total` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -209,6 +209,7 @@ CREATE TABLE `order` (
 
 LOCK TABLES `order` WRITE;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
+INSERT INTO `order` VALUES (1,6,0,800),(2,6,0,4650),(3,6,0,2650),(4,6,0,0),(5,6,0,0),(6,6,0,0),(7,6,0,0),(8,6,0,0),(9,6,0,0),(10,6,0,0),(11,6,0,0),(12,6,0,0),(13,6,0,0),(14,6,0,0),(15,6,0,2200),(16,6,0,2200);
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -226,7 +227,7 @@ CREATE TABLE `orderdetails` (
   `quantity` int NOT NULL,
   `customized` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,6 +236,7 @@ CREATE TABLE `orderdetails` (
 
 LOCK TABLES `orderdetails` WRITE;
 /*!40000 ALTER TABLE `orderdetails` DISABLE KEYS */;
+INSERT INTO `orderdetails` VALUES (1,1,1,0,2),(2,1,1,0,1),(3,1,1,0,7),(4,1,1,0,12),(5,1,1,2,0),(6,1,1,6,0),(7,1,1,2,0),(8,1,1,7,0),(9,1,1,10,0);
 /*!40000 ALTER TABLE `orderdetails` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -329,4 +331,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-15  7:28:51
+-- Dump completed on 2024-06-15  8:26:40
