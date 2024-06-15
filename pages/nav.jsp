@@ -120,7 +120,17 @@
             </form>
         </div>
         <div>
-            <a href="/E-Commerce-Front-end/pages/cart.jsp"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
+            <%
+                if(username == null || username.equals("")){
+                %>
+                <a href="/E-Commerce-Front-end/pages/login.jsp"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
+                <%
+                } else {
+                %>
+                <a href="/E-Commerce-Front-end/pages/cart.jsp"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
+                <%
+                }
+            %>
         </div>
         <div class="profile">
             <div>

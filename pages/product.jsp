@@ -26,6 +26,28 @@
 
     </script>
     <!--end of Navigation bar-->
+
+    <%	
+        String sessionID = "";
+        sessionID = request.getSession().getId();
+        long millis=System.currentTimeMillis(); 
+        Date date = new Date(millis);
+        String username = "";
+        String id = "";
+        
+        Cookie[] cookies = request.getCookies();
+        if(cookies != null){
+            int count = cookies.length;
+            for(int i=0; i < count; i++){
+                if(cookies[i].getName().equals("id")){
+                    id = cookies[i].getValue();
+                } else if(cookies[i].getName().equals("username")){
+                    username = cookies[i].getValue();
+                }
+            }
+        }
+    %>
+
     <main>
         <div class="ad"><img src="../assets/img/ads/ad1.webp"></div>
 
@@ -56,7 +78,17 @@
                     <i class="fa-solid fa-cart-plus cart-image"></i>
                     <form method="post" action="item.jsp">
                         <input type="hidden" name="product" value="<%=dataset.getInt(1)%>">
-                        <input type="submit" class="buy-button" value="BUY">
+                        <%
+                            if(username == null || username.equals("")){
+                            %>
+                            <input type="button" class="buy-button" onclick="location.href='login.jsp';" value="BUY" />
+                            <%
+                            } else {
+                            %>
+                            <input type="submit" class="buy-button" value="BUY">
+                            <%
+                            }
+                        %>
                     </form>
                 </div>
             </div>

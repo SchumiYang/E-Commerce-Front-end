@@ -23,7 +23,7 @@
 
     <script>
     $(function(){
-    $("#nav-placeholder").load("nav.html");
+    $("#nav-placeholder").load("nav.jsp");
     });
     </script>
 
@@ -31,7 +31,7 @@
     String message=request.getParameter("message");
     String redirectUrl = request.getParameter("redirectUrl");
     if(redirectUrl == null || redirectUrl.equals("")){
-        redirectUrl = "index.html";
+        redirectUrl = "index.jsp";
     }
 
     String encodedUrl = URLEncoder.encode(redirectUrl, "UTF-8");
