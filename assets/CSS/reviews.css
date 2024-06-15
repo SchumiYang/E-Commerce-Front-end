@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica;
@@ -6,7 +6,7 @@
     font-optical-sizing: auto;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
 }
@@ -18,8 +18,12 @@ body{
     flex-direction: column;
 }
 
-.reviews-container h2{
+.reviews-container h2 {
     font-size: 24px;
+}
+
+.title {
+    font-size: 20px;
 }
 
 .review {
@@ -27,4 +31,37 @@ body{
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
+}
+
+.head {
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.tail {
+    margin-top: 8px;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.stars input[type="radio"] {
+    display: none;
+}
+
+.stars label {
+    font-size: 20px;
+    color: #ccc;
+}
+
+.stars input[type="radio"]:checked~label {
+    color: gold;
 }
