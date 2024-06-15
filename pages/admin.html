@@ -47,7 +47,7 @@
                 <div class="header">
                     <h1>Add Merch</h1>
                 </div>
-                <form action="add.jsp" method="post">
+                <form action="admin.html">
                     <div class="details">
                         <div class="product">
                             <div class="label">Product Name:</div>
@@ -86,7 +86,7 @@
                 <div class="header">
                     <h1>Manage Merch</h1>
                 </div>
-                <form id="merch-select" class="select" method="post">
+                <form id="merch-select" class="select" action="admin.html">
                     <select class="selector" name="goods">
                         <option value="Merch1">Merch1</option>
                         <option value="Merch2">Merch2</option>
@@ -94,7 +94,7 @@
                     </select>
                     <i class="fa-solid fa-circle-check check" onclick="$('#merch-select').submit();"></i>
                 </form>
-                <form action="manage.jsp" method="post">
+                <form action="admin.html">
                     <div class="details">
                         <div class="product">
                             <div class="label">Product Name:</div>
@@ -145,7 +145,7 @@
                         </div>
                         <div class="order-action">
                             <i class="fa-solid fa-circle-xmark order-delete" onclick="$('#delete1').submit();"></i>
-                            <form method="post" action="done.jsp">
+                            <form action="admin.html">
                                 <input type="hidden" name="order-num" value="123">
                                 <button class="order-done">
                                     <i class="fa-solid fa-check order-done"></i>
@@ -166,7 +166,7 @@
                         </div>
                         <div class="order-action">
                             <i class="fa-solid fa-circle-xmark order-delete" onclick="$('#delete2').submit();"></i>
-                            <form method="post" action="done.jsp">
+                            <form action="admin.html">
                                 <input type="hidden" name="order-num" value="124">
                                 <button class="order-done">
                                     <i class="fa-solid fa-check order-done"></i>
