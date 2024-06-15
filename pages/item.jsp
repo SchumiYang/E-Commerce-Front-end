@@ -27,7 +27,7 @@
         String action = request.getParameter("action");
         if(action != null && action.equals("add-cart")){
             String cartId = Stream.of(request.getCookies()).filter(c->c.getName().equals("cartid")).map(c->c.getValue()).findFirst().orElse(null);
-            if(cartId==null)
+            if(cartId == null)
                 return;
             sql="INSERT IGNORE INTO `cartdetails` (`cartId`, `productId`, `customized`, `quantity`) VALUES (?,?,?,?);";
             pstmt = con.prepareStatement(sql);
@@ -70,7 +70,7 @@
                     <div class="quantity-container">
                         <div class="quantity">
                             <input type="button" class="minus" value="-">
-                            <input type="number"  name="amount" value="1" min="1">
+                            <input type="number" name="amount" value="1" min="1">
                             <input type="button" class="plus" value="+">
                         </div>
                         <input type="submit" class="buy-now" value="Buy Now">
@@ -121,7 +121,7 @@
             <section class="reviews">
                 <h2>Reviews</h2>
                 <div class="reviews-container">
-                    <iframe src="reviews.jsp?product=<%=id%>"></iframe>
+                    <iframe src="reviews.jsp?product=<%=id%>&customized=0"></iframe>
                  </div>  
             </section>
             <section class="brand">

@@ -73,7 +73,7 @@
             %>
             <div class="cart-item">
                 <div class="product">
-                    <img src="../assets/img/product/<%=(customized != 1 ? productId + ".svg" : "equa.webp")%>" alt="Product Image" />
+                    <img src="../assets/img/<%=(customized != 1 ? "product/" + productId + ".svg" : "equa.webp")%>" alt="Product Image" />
                     <div class="detail">
                         <span><%=dataset2.getString(2)%></span>
                         <span class="spec">vCPU: <%=dataset2.getInt(6)%>c<br>vGPU: <%=dataset2.getInt(7)%>G<br>RAM: <%=dataset2.getInt(8)%>G<br>Mem. <%=dataset2.getInt(9)%>G<br>Bandwidth <%=dataset2.getInt(10)%>G</span>

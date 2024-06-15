@@ -59,7 +59,7 @@
 					sql ="INSERT IGNORE into `cart` (`userId`) VALUES ('"+userId+"')";
 					con.createStatement().executeUpdate(sql);
 				}
-				sql = "SELECT id FROM `cart` WHERE `userId` = ?;";
+				sql = "SELECT id FROM `cart` WHERE `userId` = ? ORDER BY `id` DESC LIMIT 1;";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setInt(1,Integer.parseInt(userId));
 				dataset = pstmt.executeQuery();

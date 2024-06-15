@@ -7,10 +7,11 @@
     <section class="reviews-container">
         <%
             String id = request.getParameter("product");
-            sql = "SELECT * FROM `comment` `c` INNER JOIN `members` m ON c.userId = m.id WHERE `c`.`productId` = ? ORDER BY `c`.`timestamp` DESC;";
+            boolean customized = request.getParameter("customized").equals("1");
+            sql = "SELECT * FROM `comment` `c` INNER JOIN `members` m ON c.userId = m.id WHERE `c`.`productId` = ? AND `c`.`customized` = ? ORDER BY `c`.`timestamp` DESC;";
             pstmt=con.prepareStatement(sql);
             pstmt.setInt(1,Integer.parseInt(id));
-            
+            pstmt.setInt(2, (customized ? 1 : 0));
             ResultSet dataset = pstmt.executeQuery();
             while(dataset.next()){
         %>
